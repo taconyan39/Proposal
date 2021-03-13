@@ -6,16 +6,15 @@
 
 <div class="l-wrapper__2colum u-site__width">
 
-  <div class="p-index__mainImg">
+  <div class="p-index__mainImg u-site__width">
     <div class="c-img--outer"><img class="c-img" src="{{ asset('images/default/introduction.jpeg') }}"
     srcset="{{ asset('images/retina_2x/introduction.jpeg 2x') }}"
     alt="inspirationの紹介画像"></div>
   </div>
 
-    @include('components.sidebar-category',[ 'categories' => $categories ])
+  @include('components.sidebar-category',[ 'categories' => $categories ])
 
     <main class="l-main__2colum">
-    
       
       @component('components.pickupCategory-section', [ 'pickupCategories' => $pickupCategories])
         @slot('title')
@@ -31,7 +30,7 @@
 
       @endcomponent
 
-      @include('components.show-all', ['url' => 'all-ideas-list'])
+      @include('components.show-all', ['url' => 'all-ideas-list', 'link' => '全件表示'])
       </section>
       
       <section class="c-section p-ideaList">
@@ -42,7 +41,7 @@
 
       @endcomponent
 
-      @include('components.show-all', ['url' => 'all-ideas-list'])
+      @include('components.show-all', ['url' => 'attention-ranking', 'link' => '注目のアイデア一覧'])
       </section>
 
       <section class="c-section p-ideaList">
@@ -53,7 +52,7 @@
 
       @endcomponent
 
-      @include('components.show-all', ['url' => 'all-ideas-list'])
+      @include('components.show-all', ['url' => 'selling-ranking', 'link' => '売れているアイデア一覧'])
       </section>
 
       <section class="p-simpleList c-section">
@@ -64,7 +63,7 @@
 
         @endcomponent
 
-        @include('components.show-all', ['url' => 'reviews-list'])
+        @include('components.show-all', ['url' => 'reviews-list', 'link' => 'レビュー一覧'])
 
       </section>
 

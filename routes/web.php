@@ -32,7 +32,7 @@ Route::get('test', 'TestController@get');
 
 // トップページ
 
-Route::get('landingpage', 'LandingPageController@show');
+Route::get('about', 'LandingPageController@show');
 Route::get('/', 'TopController@index')->name('index');
 Route::get('/index', 'TopController@index')->name('index');
 
@@ -51,6 +51,8 @@ Route::post('reviews/{id}','ReviewsController@postreview');
 // アイデア一覧表示
 Route::get('all-ideas-list', 'IdeasListController@index')->name('all-ideas-list');
 Route::post('all-ideas-list', 'IdeasListController@search');
+Route::get('attention-ranking', 'IdeasListController@attentionRanking');
+Route::get('selling-ranking', 'IdeasListController@sellingRanking');
 Route::get('reviews-list', 'ReviewsController@index');
 
 // 気になるの削除処理

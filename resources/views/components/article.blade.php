@@ -58,48 +58,9 @@
             @if( $myreview )
                 <p class="p-ideaDetail__reviewText">口コミは投稿済みです</p>
             @else
-                <p class="p-ideaDetail__reviewText">口コミを書いて投稿しよう！！</p>
-                <form action="{{ url('reviews/' . $idea->id)}}" method="POST">
-                    @csrf
-                    <div class="p-ideaDetail__reviewForm ">
-                        <label class="c-flex--start p-ideaDetail__reviewForm--row">
-                            <select name="rating" id="" class="p-postReview__form--select c-selectBox"
-                            >
-                                <option value="">評価</option>
-
-                                @for($i = 5; $i > 0; $i-- )
-                                    <option value="{{$i}}">
-                                        @for($x = 1; $x <= $i; $x++)
-                                        <span class="c-star">★</span>
-                                        @endfor
-                                    </option>
-                                @endfor
-                            </select>
-                        </div>
-                        <div class="c-flex--start">
-                            @error('rating')
-                                <span class="c-error" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <post-review oldreview="{{ old('review')}}"></post-review>
-
-                        <div class="c-flex--end">
-                            @error('review')
-                            <span class="c-error" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
-
-                        
-
-
-                    <div class="c-form__row p-postReview__formRow--btn c-flex--end">
-                        <button type="submit" class="c-btn p-postReview__form--btn c-btn--action2">口コミを投稿する</button>
-                    </div>
-                </form>
+                <div class="c-form__row p-postReview__formRow--btn c-flex--center">
+                    <a href="{{ url('post-review/' . $idea->id ) }}" class="c-btn p-postReview__form--btn c-btn--action2">口コミを投稿する</a>
+                </div>
             @endif
         </section>
         @else

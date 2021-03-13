@@ -194,19 +194,10 @@ class IdeasListController extends Controller
 
     }
 
-    public function attention(){
+    public function attentionRanking(){
 
-        // 注目のアイデア
-        $user = Auth::user();
-
-        $categories = Category::all();
-        $user_id = $user->id;
-
-        // 気になるリストを登録順に代入
-        $ideas = Idea::whereHas('latestInterests', function($q) use ($user_id){
-            $q->where('user_id', $user_id);
-        })->paginate(10);
-
+         // アイデアを気になるの多い順に並べる
+         $ideas = Idea::withCount('interests')->orderBy('interests_count', 'desc')->paginate(10);
 
         // 口コミの平均を代入
         foreach($ideas as $idea){
@@ -214,7 +205,21 @@ class IdeasListController extends Controller
             $idea->countReview = $idea->reviews->count();
         }
 
-        return view('ideas-list.interests-list', ['user' => $user ,'ideas' => $ideas, 'categories' => $categories]);
+        return view('ideas-list.attention-ideas-ranking', ['ideas' => $ideas]);
+    }
+
+    public function sellingRanking(){
+
+         // アイデアを気になるの多い順に並べる
+         $ideas = Idea::withCount('buyIdeas')->orderBy('buy_ideas_count', 'desc')->paginate(10);
+
+        // 口コミの平均を代入
+        foreach($ideas as $idea){
+            $idea->rating = sprintf('%.1f',$idea->reviews->avg('rating'));
+            $idea->countReview = $idea->reviews->count();
+        }
+
+        return view('ideas-list.selling-ideas-ranking', ['ideas' => $ideas]);
     }
 
 }

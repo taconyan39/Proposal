@@ -16,7 +16,20 @@
 
         @endguest
 
-        <idea-reviews :id="{{$idea->id}}"></idea-reviews>
+        <section class="p-ideaReviews">
+
+            <p class="p-ideaDetail__reviewTitle">みんなの口コミ</p>
+        <!-- 口コミがない場合 -->
+            @if($idea->reviews->isEmpty())
+            <div class="c-list p-ideaReviews__list">
+
+                <div class="p-ideaReviews--none">口コミはまだ投稿されていません</div>
+                </div>
+
+            @else
+                <idea-reviews :id="{{$idea->id}}"></idea-reviews>
+            @endif
+        </section>
         
         <div class="c-link__container">
             <a href="{{url()->previous()}}" class="c-link__underline">&lt;&lt; 前のページに戻る</a>

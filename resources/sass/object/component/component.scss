@@ -559,3 +559,52 @@
   height: 3px;
   background-color: #342534;
 }
+
+.c-ranking__item{
+  &:first-child::before{
+    counter-increment: section;
+    content: '第一位';
+    display: block;
+    font-size: $font-size_xxl;
+    background: linear-gradient(45deg, #B67B03 0%, #DAAF08 45%, #FEE9A0 70%, #DAAF08 85%, #B67B03 90% 100%);
+    text-align: center;
+    width: 150px;
+    margin: 0 auto;
+    border-radius: 3px;
+  }
+  &:nth-child(2)::before{
+    counter-increment: section;
+    content: '第二位';
+    display: block;
+    font-size: $font-size_xxl;
+    background: linear-gradient(45deg, #757575 0%, #9E9E9E 45%, #E8E8E8 70%, #9E9E9E 85%, #757575 90% 100%);
+    text-align: center;
+    width: 150px;
+    margin: 0 auto;
+    border-radius: 3px;
+  }
+  &:nth-child(3)::before{
+    counter-increment: section;
+    content: '第三位';
+    display: block;
+    font-size: $font-size_xxl;
+    background: repeating-linear-gradient(45deg, #C62828 0%, #EF5350 45%, #FFEBEE 70%, #EF5350 85%, #C62828 100%); 
+    text-align: center;
+    width: 150px;
+    margin: 0 auto;
+    border-radius: 3px;
+  }
+  &:nth-child(n + 4)::before{
+    counter-increment: section;
+    content: '第'counter(section)'位';
+    // content: '第４位';
+    display: block;
+    font-size: $font-size_xxl;
+    background: linear-gradient(45deg, #0277BD 0%, #4FC3F7 50%, #E1F5FE 70%, #4FC3F7 80%, #0277BD 80% 100%);   
+    text-align: center;
+    width: 150px;
+    margin: 0 auto;
+    border-radius: 3px;
+  }
+
+}

@@ -33,8 +33,4 @@ class Idea extends Model
         return $this->hasMany('App\BuyIdea');
     }
 
-    // public function buyIdeas(){
-    //     return $this->hasMany('App\BuyIdea')->orderBy('created_at', 'desc');
-    // }
-
 }

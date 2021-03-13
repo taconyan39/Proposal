@@ -29,7 +29,7 @@
           <div class="c-flex--end p-ideaDetail__user">
               <div class="c-img--outer c-img--round p-ideaDetail__userImg--outer">
                   <img class="c-img p-ideaList__userImg" src="{{ $idea->user->icon_img }}" 
-                  srcset="{{ asset($idea->user->icon_img ' 2x')}}"
+                  srcset="{{ asset($idea->user->icon_img . ' 2x')}}"
                   alt="アイコン画像">
                       
                   </div>

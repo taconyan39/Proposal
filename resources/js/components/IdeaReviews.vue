@@ -1,18 +1,9 @@
 <template>
 <!-- アイデアに寄せられた口コミを表示するコンポーネント -->
-<section class="p-ideaReviews">
-
-  <p class="p-ideaDetail__reviewTitle">みんなの口コミ</p>
-
-  <!-- 口コミがない場合 -->
-  <div v-if="!items.data[0]" class="c-list p-ideaReviews__list">
-
-      <div class="p-ideaReviews--none">口コミはまだ投稿されていません</div>
-  </div>
 
   <!-- 口コミがある場合 -->
 
-  <div v-else>
+  <div>
     <ul  class="c-list p-ideaReviews__list">
 
         <li v-for="item in items.data" :key="item.id" class="c-list__item--simple p-ideaReviews__item u-clearfix">
@@ -57,8 +48,6 @@
     <pagination :data="items" @move-page="movePage($event)">
     </pagination>
   </div>
-
-  </section>
             
 </template>
 

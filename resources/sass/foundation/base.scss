@@ -62,6 +62,7 @@ html,body{
   line-height: 1.5;
   background-color: $body-bg;
   font-size: $font-size_default;
+  counter-reset: section; 
 }
 
 a{
