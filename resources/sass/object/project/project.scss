@@ -90,6 +90,14 @@
   &__link{
     padding: $spacing-xl $spacing-sm;
   }
+  &__btn{
+    &--wrapper{
+      padding: $spacing-xl;
+      box-sizing: border-box;
+      height: 100%;
+      width: 100%;
+    }
+  }
 }
 
 
@@ -385,7 +393,6 @@
     }
   }
   &__btn{
-
     &--wrapper{
       @include mq(){
         justify-content: space-between;
@@ -1330,11 +1337,26 @@
 // ランディングページ
 .p-aboutSection{
   padding: 60px 0;
+  &__btn{
+    @include mq(md){
+      border: 1px solid $color_gray;
+      padding: $spacing_md $spacing_lg;
+      box-sizing: border-box;
+      transition: .3s;
+    }
+    &--wrapper{
+      margin: 0 auto $spacing-xl;
+      width: 500px;
+      @include mq(md){
+        width: 100%;
+      }
+    }
+  }
   &__title{
     font-size: $font-size_xl;
-    // color: $color_sub;
     margin-bottom: 20px;
     text-align: center;
+    color: $color_action2;
     &--h3{
       font-size: $font-size_lg;
       margin-bottom: 20px;
@@ -1352,6 +1374,9 @@
       box-sizing: border-box;
       background: $color_gray-light;
       padding: 20px;
+      @include mq(md){
+        width: 100%;
+      }
     }
   }
   &__sub{
@@ -1371,22 +1396,32 @@
     padding: $spacing-xl;
     margin-bottom: $spacing-xl;
     box-sizing: border-box;
+    @include mq(md){
+      flex-direction: column;
+    }
     &:nth-child(odd){
       flex-direction: row-reverse;
+      @include mq(md){
+        flex-direction: column;
+      }
     }
   }
   &__exampleText{
     width: 70%;
     box-sizing: border-box;
+    margin: 0 auto;
+    @include mq(md){
+      width: 90%;
+    }
   }
   &__exampleImg{
     &--outer{
     width: 20%;
     box-sizing: border-box;
+      @include mq(md){
+        width: 90%;
+        margin-bottom: $spacing-lg;
+      }
     }
-  }
-  &__wrapper{
-    width: 980px;
-    margin: 0 auto;
   }
 }

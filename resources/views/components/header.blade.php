@@ -28,7 +28,7 @@
             @endif
 
             <nav class="u-site__width p-header">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/index') }}">
                     <h1 class="c-title__header p-header__title">{{ config('app.name', 'Inspiration') }}</h1>
                 </a>
 
@@ -78,8 +78,8 @@
                             login="{{ route('login')}}"
                             name="{{session('name')}}"
                             register="{{ route('register')}}"
-                         list="{{ url('all-ideas-list') }}"
-                            noimg="{{url('images/icons/noimage_icon.jpg')}}"
+                            list="{{ url('all-ideas-list') }}"
+                            noimg="{{ asset('images/default/icons/noimage_icon.jpg') }}"
                             mypage="{{url('mypage')}}"
                             profedit="{{route('profile.edit')}}"
                             postidea="{{url('post-idea/create')}}"

@@ -32,8 +32,7 @@ Route::get('test', 'TestController@get');
 
 // トップページ
 
-Route::get('about', 'LandingPageController@show');
-Route::get('/', 'TopController@index')->name('index');
+Route::get('/', 'TopController@about');
 Route::get('/index', 'TopController@index')->name('index');
 
 // アイデア詳細表示

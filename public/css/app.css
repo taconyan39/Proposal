@@ -354,9 +354,74 @@ select {
   }
 }
 
+.c-title__section--comment {
+  position: relative;
+  display: inline-block;
+  padding: 0 55px;
+}
+
+.c-title__section--comment::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 2px;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+  left: 0;
+}
+
+.c-title__section--comment::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 2px;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+  right: 0;
+}
+
 .c-title__article {
   font-size: 1.8rem;
   margin-bottom: 15px;
+}
+
+.c-title--brackets {
+  position: relative;
+  line-height: 1.4;
+  padding: 0.25em 1em;
+  display: inline-block;
+  top: 0;
+}
+
+.c-title--brackets::before {
+  position: absolute;
+  top: 0;
+  content: "";
+  width: 8px;
+  height: 100%;
+  display: inline-block;
+  border-left: solid 1px black;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+  left: 0;
+}
+
+.c-title--brackets::after {
+  position: absolute;
+  top: 0;
+  content: "";
+  width: 8px;
+  height: 100%;
+  display: inline-block;
+  content: "";
+  border-top: solid 1px black;
+  border-right: solid 1px black;
+  border-bottom: solid 1px black;
+  right: 0;
 }
 
 .c-error {
@@ -410,6 +475,8 @@ select {
 .c-btn--large {
   font-size: 1.2rem;
   padding: 10px 20px;
+  border: 1px solid #102833;
+  transition: 0.3s;
 }
 
 .c-btn--large:hover {
@@ -439,7 +506,7 @@ select {
 }
 
 .c-btn--action3 {
-  background: #4FC3F7;
+  background: rgba(79, 195, 247, 0.7);
 }
 
 .c-btn--sub {
@@ -757,7 +824,7 @@ select {
 }
 
 .c-link__underline:hover {
-  color: #4FC3F7;
+  color: rgba(79, 195, 247, 0.7);
 }
 
 .c-link__previous {
@@ -765,7 +832,7 @@ select {
 }
 
 .c-link__previous:hover {
-  color: #4FC3F7;
+  color: rgba(79, 195, 247, 0.7);
 }
 
 .c-info {
@@ -856,14 +923,19 @@ select {
   width: 50%;
 }
 
+.c-flex--around {
+  display: flex;
+  justify-content: space-around;
+}
+
 .c-flex--between {
   display: flex;
   justify-content: space-between;
 }
 
-.c-flex--around {
+.c-flex--center {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .c-flex--start {
@@ -1123,6 +1195,13 @@ select {
 
 .p-categoryList__link {
   padding: 20px 5px;
+}
+
+.p-categoryList__btn--wrapper {
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
 }
 
 .p-pickupCategory__container {
@@ -2557,10 +2636,31 @@ select {
   padding: 60px 0;
 }
 
+@media screen and (max-width: 768px) {
+  .p-aboutSection__btn {
+    border: 1px solid #999;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    transition: 0.3s;
+  }
+}
+
+.p-aboutSection__btn--wrapper {
+  margin: 0 auto 20px;
+  width: 500px;
+}
+
+@media screen and (max-width: 768px) {
+  .p-aboutSection__btn--wrapper {
+    width: 100%;
+  }
+}
+
 .p-aboutSection__title {
   font-size: 1.4rem;
   margin-bottom: 20px;
   text-align: center;
+  color: #001F66;
 }
 
 .p-aboutSection__title--h3 {
@@ -2587,6 +2687,12 @@ select {
   padding: 20px;
 }
 
+@media screen and (max-width: 768px) {
+  .p-aboutSection__text--wrapper {
+    width: 100%;
+  }
+}
+
 .p-aboutSection__sub {
   padding: 60px 0;
   background: #cfd5e6;
@@ -2608,13 +2714,32 @@ select {
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 768px) {
+  .p-aboutSection__exampleItem {
+    flex-direction: column;
+  }
+}
+
 .p-aboutSection__exampleItem:nth-child(odd) {
   flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 768px) {
+  .p-aboutSection__exampleItem:nth-child(odd) {
+    flex-direction: column;
+  }
 }
 
 .p-aboutSection__exampleText {
   width: 70%;
   box-sizing: border-box;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .p-aboutSection__exampleText {
+    width: 90%;
+  }
 }
 
 .p-aboutSection__exampleImg--outer {
@@ -2622,8 +2747,10 @@ select {
   box-sizing: border-box;
 }
 
-.p-aboutSection__wrapper {
-  width: 980px;
-  margin: 0 auto;
+@media screen and (max-width: 768px) {
+  .p-aboutSection__exampleImg--outer {
+    width: 90%;
+    margin-bottom: 15px;
+  }
 }
 

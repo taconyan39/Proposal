@@ -8,7 +8,7 @@
 
   <div class="p-index__mainImg u-site__width">
     <div class="c-img--outer"><img class="c-img" src="{{ asset('images/default/introduction.jpeg') }}"
-    srcset="{{ asset('images/retina_2x/introduction.jpeg 2x') }}"
+    srcset="{{ asset('images/retina_2x/introduction.png 2x') }}"
     alt="inspirationの紹介画像"></div>
   </div>
 
@@ -47,7 +47,7 @@
       <section class="c-section p-ideaList">
       @component('components.ideasList-section', ['ideas' => $hotIdeas, 'listType' => 0])
         @slot('title')
-          売れてるアイデア
+          売れているアイデア
         @endslot
 
       @endcomponent

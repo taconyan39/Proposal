@@ -14,6 +14,10 @@
         売れているアイデアランキング
       @endslot
 
+      @slot('text')
+        今まで最も売れたアイデア
+      @endslot
+
     @endcomponent
     
      <a href="{{url()->previous()}}">&lt;&lt; 前のページに戻る</a>

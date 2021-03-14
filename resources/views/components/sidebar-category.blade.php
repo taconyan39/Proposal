@@ -14,6 +14,10 @@
         <a href="{{ url('all-ideas-list?category_id=' . $category->id) }}" class="c-list__link p-categoryList__link">{{ __($category->name_ja) }}</a>
       </li>
       @endforeach 
+
+      <li class="p-categoryList__btn--wrapper c-flex--center">
+        <a href="{{ url('/') }}" class="c-btn c-btn--action3 p-categoryList__btn">利用方法を見る</a>
+      </li>
     </ul> 
   </div>
 </aside>

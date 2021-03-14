@@ -14,6 +14,10 @@
         注目アイデアランキング
       @endslot
 
+      @slot('text')
+        よく気になるに登録されているアイデア
+      @endslot
+
     @endcomponent
     
      <a href="{{url()->previous()}}">&lt;&lt; 前のページに戻る</a>

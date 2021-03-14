@@ -1,16 +1,20 @@
 <section class="c-section p-ideaRanking">
-<h2 class="c-title__section p-ideaRanking__title">{{ $title }}</h2>
+  <div class="p-ideaRanking__title--wrapper">
+    <h2 class="c-title__section p-ideaRanking__title">{{ $title }}</h2>
+    <div class="c-flex--center">
+      <p class="c-title__section--comment">{{ $text }}</p>
+    </div>
+  </div>
 
   <ul class="c-list p-ideaRanking__list">
 
   @if($ideas->isEmpty())
-      <div class="p-simpleList--none">
-        <p>{{$title}}は</br>まだありません</p>
-      
-      </div>
-    @else
+    <div class="p-simpleList--none">
+      <p>{{$title}}は</br>まだありません</p>
+    </div>
+  @else
 
-    <div>
+  <div>
     @foreach($ideas as $idea)
       <li class="c-list__item c-ranking__item p-ideaRanking__item u-clearfix">
         <div class="p-ideaRanking__top c-info">
@@ -27,48 +31,49 @@
           </div>
         </div>
 
-        <div class="c-row p-ideaRanking__title--wrapper">
-          <h3 class="c-list__title p-ideaRanking__title">{{ $idea->title }}</h3>
-        </div>
+      <div class="c-row p-ideaRanking__title--wrapper">
+        <h3 class="c-list__title p-ideaRanking__title">{{ $idea->title }}</h3>
+        
+      </div>
 
-        <div class="p-ideaRanking__body">
-          <div class="p-ideaRanking__body--left">
+      <div class="p-ideaRanking__body">
+        <div class="p-ideaRanking__body--left">
 
-            <span class="c-tag p-ideaRanking__body--tag">{{ $idea->category->name_ja }}</span>
-              
-            <div class="p-ideaRanking__userCard c-card">
-              <div class="c-img--outer c-img--round c-card--top p-ideaRanking__userImg--outer">
-                <img class="c-img p-ideaRanking__userImg" src="{{ $idea->user->icon_img }}"
-                srcset="{{ asset($idea->user->icon_img . ' 2x')}}"
-                alt="">
-              </div>
-              <div class="c-card--bottom p-ideaRanking__userCard--bottom">
-                <a href="{{ url('user/' . $idea->user->id) }}" class="c-card__name c-link__underline">{{ $idea->user->name }}</a>
-              </div>
+          <span class="c-tag p-ideaRanking__body--tag">{{ $idea->category->name_ja }}</span>
+            
+          <div class="p-ideaRanking__userCard c-card">
+            <div class="c-img--outer c-img--round c-card--top p-ideaRanking__userImg--outer">
+              <img class="c-img p-ideaRanking__userImg" src="{{ $idea->user->icon_img }}"
+              srcset="{{ asset($idea->user->icon_img . ' 2x')}}"
+              alt="">
             </div>
+            <div class="c-card--bottom p-ideaRanking__userCard--bottom">
+              <a href="{{ url('user/' . $idea->user->id) }}" class="c-card__name c-link__underline">{{ $idea->user->name }}</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="p-ideaRanking__body--right">
+          
+          <div class="p-ideaRanking__summary">
+            <p class="c-txt p-ideaRanking__summary ">{{$idea->summary}}</p>
           </div>
           
-          <div class="p-ideaRanking__body--right">
-            
-            <div class="p-ideaRanking__summary">
-              <p class="c-txt p-ideaRanking__summary ">{{$idea->summary}}</p>
-            </div>
-            
-            <div class="p-ideaRanking__bottom">
-              @component('components.list-btn',['idea' => $idea, 'listType' => $listType])
-              @endcomponent
-            </div>
-          </div>
-        </div>
-
-        <div class="p-ideaRanking__bottom--sp">
+          <div class="p-ideaRanking__bottom">
             @component('components.list-btn',['idea' => $idea, 'listType' => $listType])
-              @endcomponent
+            @endcomponent
+          </div>
         </div>
-          
-      </li>
-      @endforeach
-    </div>
+      </div>
+
+      <div class="p-ideaRanking__bottom--sp">
+          @component('components.list-btn',['idea' => $idea, 'listType' => $listType])
+            @endcomponent
+      </div>
+        
+    </li>
+    @endforeach
+  </div>
 
       <!-- スマホ版レイアウト -->
       <div>

@@ -50,4 +50,8 @@ class TopController extends Controller
         return view('index', ['ideas' => $ideas, 'categories' => $categories, 'pickupCategories' => $pickupCategories, 'reviews' => $reviews, 'attentionIdeas' => $attentionIdeas, 'hotIdeas' => $hotIdeas]);
     }
 
+    public function about(){
+        return view('about');
+    }
+
 }
