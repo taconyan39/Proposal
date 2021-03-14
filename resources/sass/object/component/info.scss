@@ -1,0 +1,28 @@
+.c-info{
+  margin-bottom: $spacing-md;
+  display: flex;
+  justify-content: space-between;
+  text-align:right;
+  @include mq('md'){
+    flex-wrap: wrap;
+  }
+  &__box{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    @include mq(md){
+      width: 50%;
+      text-align: center;
+    }
+    &--left{
+      text-align: start;
+    }
+    &--right{
+      text-align:end;
+    }
+    &__item{
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}

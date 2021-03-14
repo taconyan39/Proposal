@@ -1,0 +1,103 @@
+.c-form{
+  padding: $spacing-xl $spacing-3l;
+  box-sizing: border-box;
+  border: 1px solid $color_gray;
+  background: #fff;
+  margin-bottom: $spacing-lg;
+  @include mq(md){
+    padding: $spacing-xl $spacing-xl;
+  }
+  &__annotation{
+    font-size: $font_size-md;
+    font-weight: normal;
+  }
+  &__countLength{
+    font-weight: normal;
+    margin-top: 5px;
+  }
+  &__title{
+    font-size: $font-size_xxl;
+    text-align: start;
+    color: $color_action2;
+    @include mq(md){
+      font-size: $font-size_xl;
+    }
+  }
+  &__header{
+    display:flex;
+    align-items: center;
+    background: $color_sub;
+    padding: $spacing-md $spacing-lg;
+    overflow: hidden;
+  }
+  &__label{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-top: $spacing-xxl;
+    color: $color_black;
+    font-weight: bold;
+    font-size: $font-size_lg;
+    &--checkBox{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      color: $color_gray;
+      &:hover{
+        cursor:pointer;
+      }
+    }
+    &--outer{
+      margin-top: $spacing_xxl;
+      margin-bottom: $spacing_xxl;
+    }
+  }
+  &__input{
+    width: 100%;
+    padding: $spacing-md;
+    box-sizing: border-box;
+    margin-top:$spacing-md; 
+    border: none;
+    background: $color_gray-light;
+    font-size: $font-size_lg;
+    @include mq(md){
+      font-size: $font-size_default;
+    }
+    &--checkBox{
+      margin-right: $spacing_sm;
+      &:hover{
+        cursor:pointer;
+      }
+    }
+    &--half{
+      width: 50%;
+      padding: $spacing-md;
+      box-sizing: border-box;
+      margin-top:$spacing-md; 
+      border: none;
+      background: $color_gray-light;
+      font-size: $font-size_lg;
+      @include mq(md){
+        font-size: $font-size_default;
+      }
+    }
+  }
+  &__textarea{
+    width: 100%;
+    padding: $spacing-md;
+    box-sizing: border-box;
+    margin-top: $spacing-md;
+    font-size: $font-size_lg;
+    background: $color_gray-light;
+  }
+  &__wrapper{
+    width: 400px;
+    margin: 0 auto;
+    font-size: $font-size_lg;
+    @include border();
+    box-sizing: border-box;
+    @include mq(md){
+      width: 100%;
+    }
+  }
+}

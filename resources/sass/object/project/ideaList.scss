@@ -1,0 +1,169 @@
+// ideaList
+.p-ideaList{
+  &__list{
+    width: 100%;
+  }
+  &__item{
+    border: 3px solid $color_main;
+    width: 100%;
+    margin-bottom: $spacing-xl;
+    padding: $spacing-md;
+    box-sizing: border-box;
+    @include mq('md'){
+      display: none;
+    }
+    &--sp{
+      display: none;
+      align-items: center;
+      transition: .3s;
+      overflow: hidden;
+      border: 3px solid $color_main;
+      width: 100%;
+      margin-bottom: $spacing-xl;
+      padding: $spacing-lg;
+      box-sizing: border-box;
+      @include mq('md'){
+        display: block;
+      }
+    }
+  }
+  &__rating{
+    display: inline;
+  }
+  &__price{
+    font-size: $font-size_lg;
+
+  }
+  &__body{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    &--sp{
+      margin-bottom: $spacing-xl;
+    }
+    &--left{
+      width: 125px;
+      box-sizing: border-box;
+      padding: $spacing-md;
+      text-align: center;
+      margin-right: $spacing-md;
+    }
+    &--tag{
+      display: inline-block;
+      text-align: center;
+      width: 100px;
+      margin-bottom: 10px;
+    }
+    &--right{
+      margin: 0 auto;
+      width: 70%;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      height: 320px;
+      @include mq(md){
+        overflow-wrap: break-word;
+        width: 60%;
+      }
+      &-sp{
+        align-items:center;
+        display: flex;
+        width: 50%;
+      }
+    }
+  }
+  &__bottom{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    @include mq(md){
+      display: none;
+    }
+    &--sp{
+      display: none;
+      @include mq(md){
+        bottom: 10px;
+        width: 100%;
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+    }
+  }
+  &__btn{
+
+    &--wrapper{
+      @include mq(){
+        justify-content: space-between;
+        padding: 0 $spacing_md;
+      }
+    }
+    &--detail{
+      background: $color_action;
+    }
+  }
+  &__user{
+    width: 100px;
+    padding: $spacing-sm;
+  }
+  &__userImg{
+    &--outer{
+      width: 80px;
+      height: 80px;
+      margin: 0 auto $spacing-md;
+    }
+  }
+  &__summary{
+    width: 100%;
+    text-align: start;
+    margin-bottom: 20px;
+    font-size: $font-size_lg;
+    color: $color_gray;
+    overflow-wrap: break-word;
+  }
+  &__title{
+    text-align: center;
+    &--wrapper{
+      margin-bottom: $spacing-lg;
+      padding: 0 $spacing-md;
+      @include mq(md){
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+  &__top{
+    margin-bottom: $spacing-lg;
+    box-sizing: border-box;
+    padding: $spacing-md;
+  }
+  &__row{
+    align-items: center;
+  }
+}
+
+.p-ideasList{
+  &__bottom{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    margin: 0 auto;
+    
+  }
+  &__btn{
+    font-size: $font-size_default;
+    &--detail{
+      font-size: $font-size_default;
+      background: $color_action;
+    }
+    &--show{
+      box-sizing: border-box;
+      line-height: 60px;
+    }
+  }
+}

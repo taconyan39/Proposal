@@ -1,0 +1,107 @@
+// ランディングページ
+.p-aboutSection{
+  padding: 60px 0;
+  &__btn{
+    @include mq(md){
+      border: 1px solid $color_gray;
+      padding: $spacing_md $spacing_lg;
+      box-sizing: border-box;
+      font-size: $font-size_default
+    }
+    &--wrapper{
+      margin: 0 auto $spacing-xl;
+      width: 500px;
+      @include mq(md){
+        width: 100%;
+      }
+    }
+  }
+  &__img--outer{
+    margin-bottom: $spacing-xl;
+    width: 980px;
+    margin: 0 auto $spacing-xxl;
+    @include mq(md){
+      width: 100%;
+    }
+  }
+  &__title{
+    font-size: $font-size_xl;
+    margin-bottom: 20px;
+    text-align: center;
+    color: $color_action2;
+    &--wrapper{
+      @include mq(md){
+        margin: 0 auto;
+        width: 90%;
+      }
+    }
+    &--h3{
+      font-size: $font-size_lg;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
+  &__text{
+    line-height: 20px;
+    @include mq(md){
+      width: 100%;
+    }
+    &--wrapper{
+      width: 700px;
+      margin: 0  auto;
+      box-sizing: border-box;
+      background: $color_gray-light;
+      padding: 20px;
+      @include mq(md){
+        width: 80%;
+      }
+    }
+  }
+  &__sub{
+    padding: 60px 0;
+    background: $color_sub;
+    height: 100%;
+  }
+  &__example{
+    width: 100%;
+  }
+  &__exampleItem{
+    width: 100%;
+    background: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: $spacing-xl;
+    margin-bottom: $spacing-xl;
+    box-sizing: border-box;
+    @include mq(md){
+      flex-direction: column;
+      width: 90%;
+      margin: 0 auto $spacing-xl;
+    }
+    &:nth-child(odd){
+      flex-direction: row-reverse;
+      @include mq(md){
+        flex-direction: column;
+      }
+    }
+  }
+  &__exampleText{
+    width: 70%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    @include mq(md){
+      width: 90%;
+    }
+  }
+  &__exampleImg{
+    &--outer{
+    width: 20%;
+    box-sizing: border-box;
+      @include mq(md){
+        width: 90%;
+        margin-bottom: $spacing-lg;
+      }
+    }
+  }
+}

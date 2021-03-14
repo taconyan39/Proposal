@@ -5,7 +5,7 @@
 
 <div class="l-wrapper__about">
   
-  <main class="l-main__about u-site__width">
+  <main class="l-main__about">
 
     <div class="c-img-outer p-aboutSection__img--outer">
         <img src="{{ asset('images/default/key_visual.png') }}" srcset="{{ asset('images/retina_2x/key_visual.png 2x') }}"alt="" class="c-img">
@@ -16,9 +16,9 @@
         <a href="{{ url('index') }}" class="c-btn--large c-btn--action3 p-aboutSection__btn">アイデアを探す</a>
       </div>
       
-    <section class="p-aboutSection">
+    <section class="p-aboutSection ">
 
-      <div class="p-aboutSection__wrapper u-site__width">
+      <div class="p-aboutSection__wrapper">
         <div class="p-aboutSection__text--wrapper">
           <h2 class="p-aboutSection__title">こんなサービスがあればいいのにな？</h2>
           <p class="p-aboutSection__text">ビジネスのアイデアとは日常のちょっとした気付きから生まれます。</p>
@@ -46,8 +46,8 @@
         </div>
       </section>
       
-      <section class="p-aboutSection">
-        <div class="p-aboutSection__wrapper u-site__width">
+      <section class="p-aboutSection u-site__width">
+        <div class="p-aboutSection__wrapper">
 
         <div class="p-aboutSection__title--wrapper c-flex--center">
           <h2 class="p-aboutSection__title c-title--brackets">少しのアイデアで大きな事業に成長した例</h2>

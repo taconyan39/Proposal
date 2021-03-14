@@ -3,7 +3,7 @@
 @section('title', '会員登録')
 
 @section('content')
-<div class="l-wrapper__1colum u-site__width">
+<div class="l-wrapper__1colum">
     <div class="p-register">
         
         <form method="POST" action="{{ route('register') }}" class="c-form p-register__form u-clearfix">

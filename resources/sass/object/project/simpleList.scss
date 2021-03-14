@@ -1,0 +1,94 @@
+.p-simpleList{
+  margin-bottom: $spacing_xxl;
+  &__bottom{
+    text-align: center;
+    margin: $spacing_lg 0 $spacing_lg;
+  }
+  &__body{
+    box-sizing: border-box;
+    margin-bottom: $spacing-md;
+    
+    &--left{
+      width: 100px;
+      text-align: center;
+      @include mq(md){
+        width: 40%;
+      }
+    }
+    &--right{
+      width: 80%;
+      @include mq(md){
+        width: 70%;
+      }
+    }
+    &--upper{
+      margin-bottom: $spacing_md;
+    }
+    &--title{
+      margin-bottom: 5px;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+  }
+  &__list{
+    padding: $spacing_md;
+  }
+  &__item{
+    border-bottom: 1px solid $color_black;
+    width: 100%;
+  }
+  &__listLink{
+    padding: $spacing-md;
+  }
+  &__linkBtn{
+    background: $color_sub;
+    transition: .3s;
+    &:hover{
+      background: $color_white;
+    }
+  }
+  &--none{
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid $color_black;
+    height: 150px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $font-size_xl;
+    margin-bottom: $spacing-xxl;
+  }
+  &__userImg{
+    &--outer{
+      width: 80px;
+      height: 80px;
+      margin: 0 auto $spacing-md;
+      @include mq(md){
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+  &__under{
+    text-align: center;
+    margin: $spacing_lg 0 $spacing_lg;
+  }
+  &__summary{
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+    text-decoration: underline;
+    color: $color_gray;
+  }
+  &__top{
+    display: flex;
+    margin-bottom: $spacing-md;
+  }
+  &__tag{
+    margin-right: $spacing_md;
+  }
+}

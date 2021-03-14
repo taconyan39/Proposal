@@ -1,0 +1,35 @@
+.c-list{
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  &--simple{
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  &__title{
+    font-weight: bold;
+    font-size:$font-size_xl;
+    overflow: hidden;
+    overflow-wrap: break-word;
+  }
+  &__item{
+    border-bottom: 1px solid $color_black;
+    transition: .3s;
+    &--simple{
+      border-bottom: 1px solid $color_black;
+      box-sizing: border-box;
+      overflow: hidden;
+      &:hover{
+        background-color: rgba(221, 221, 221, 0.302);
+      }
+    }
+  }
+  &__link{
+    display: block;
+    transition: .3s;
+    padding: $spacing-md;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+  }
+}

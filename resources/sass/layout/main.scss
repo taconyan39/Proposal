@@ -1,0 +1,25 @@
+
+
+
+.l-main{
+  &__1colum{
+    width: 100%;
+    box-sizing: border-box;
+    @include mq(md){
+      padding-right: $spacing-md;
+      padding-left: $spacing-md;
+    }
+  }
+  &__2colum{
+    justify-content: space-between;
+    width: 75%;
+    box-sizing: border-box;
+    @include mq(md){
+      width: 100%;
+    }
+  }
+  &__about{
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

@@ -3,7 +3,7 @@
 @section('title', 'ログイン')
 
 @section('content')
-<div class="l-wrapper__1colum u-site__width">
+<div class="l-wrapper__1colum">
     <div class="p-login">
         
         <form method="POST" action="{{ route('login') }}" class="c-form p-login__form u-clearfix">

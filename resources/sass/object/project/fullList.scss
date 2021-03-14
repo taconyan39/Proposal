@@ -1,0 +1,124 @@
+.p-fullList{
+  width: 100%;
+  &__body{
+    width: 100%;
+    box-sizing: border-bx;
+    display: flex;
+    justify-content: flex-start;
+    overflow:hidden;
+    text-overflow: ellipsis;
+  }
+  &__bottom{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70px;
+  }
+  &__btn{
+    &-detail{
+      background: $color_action;
+    }
+  }
+  &__item{
+    border: 3px solid $color_main;
+    width: 100%;
+    margin-bottom: $spacing-md;
+  }
+  &__infoBox{
+    &--left{
+      text-align: start;
+    }
+    &--bottom{
+      display: flex;
+      width: 100%;
+      margin-bottom: 10px;
+      overflow:hidden;
+    }
+    &--title{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+    }
+    &--tag{
+      display: inline-block;
+      width: 125px;
+      text-align: center;
+      margin-left: 10px;
+      margin-right: 25px;
+    }
+  }
+  &__list{
+    width: 100%;
+  }
+  &__rating{
+    display: inline;
+  }
+  &__price{
+    font-size: $font-size_lg;
+  }
+  &__user{
+    // float: left;
+    width: 120px;
+    margin-right: $spacing-lg;
+  }
+  &__userCard{
+    width: 100px;
+    padding: $spacing-sm;
+  }
+  &__userImg{
+    &--outer{
+      width: 80px;
+      height: 80px;
+      margin: 0 auto $spacing-md;
+    }
+  }
+  &__search{
+    display: flex;
+    justify-content: flex-start;
+    padding: $spacing-sm;
+    height: 100%;
+    @include mq(md){
+      flex-direction: column;
+    }
+    &--order{
+      width: 150px;
+    }
+    &--btn{
+      padding: $spacing-md;
+    }
+    &--row{
+      display: flex;
+      justify-content: flex-start;
+      @include mq(md){
+        width: 250px;
+        margin: 0 auto $spacing-md;
+      }
+    }
+  }
+  &__searchSelect{
+    width: 180px;
+  }
+  &__summary{
+    width: 100%;
+  }
+  &__text{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    // white-space: nowrap;
+    box-sizing: border-box;
+    text-align: start;
+    &--container{
+      width: 100%;
+      margin-top: $spacing_md;
+    }
+  }
+  &__title{
+    text-align: center;
+    font-size: $font-size_xl;
+  }
+}

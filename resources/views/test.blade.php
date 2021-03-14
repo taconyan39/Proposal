@@ -2,7 +2,7 @@
 
 @section('title', 'マイページ')
 @section('content')
-<div class="l-wrapper__2colum u-site__width">
+<div class="l-wrapper__2colum">
     <confirm-modal></confirm-modal>
 </div>
 @endsection

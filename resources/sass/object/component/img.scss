@@ -1,0 +1,25 @@
+// img
+.c-img{
+  width: 100%;
+  &--outer{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+  &--round{
+    width: 100%;
+    border-radius: 50%;
+    border: 1px solid $color_black;
+  }
+  // TODO 画像フィルター
+  &__filter{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+  }
+}

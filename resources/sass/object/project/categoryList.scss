@@ -1,0 +1,20 @@
+.p-categoryList{
+  &__title{
+    margin-bottom: 0;
+    padding: $spacing-md $spacing-sm;
+  }
+  &__item{
+    border-bottom: 1px solid $color_gray;
+  }
+  &__link{
+    padding: $spacing-xl $spacing-sm;
+  }
+  &__btn{
+    &--wrapper{
+      padding: $spacing-xl;
+      box-sizing: border-box;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+// ユーザーごとのアイデアリスト
+.p-userIdeaList{
+  width: 300px;
+  margin: 0 auto;
+  @include mq(sm){
+    width: 100%;
+  }
+  &__btn{
+    display: block;
+    width:100%;
+    margin: 0 auto $spacing_md;
+    padding: $spacing-sm $spacing-md;
+    text-align: center;
+  }
+  &__card{
+    box-sizing: border-box;
+    padding: $spacing-md;
+    width: 100%;
+    margin-right: 15px;
+    overflow: hidden;
+    border: 3px solid $color_main;
+    background: #fff;
+  }
+  &__img{
+    &--outer{
+      width: 80px;
+      height: 80px;
+      margin: 0 auto;
+    }
+  }
+  &__item{
+    display: block;
+    border: none;
+    margin: $spacing_sm 0;
+  }
+  &__introduction{
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: $spacing_lg;
+    box-sizing: bordrer-box;
+    &--card{
+      min-height: 150px;
+      background: $color_white;
+    }
+    &--text{
+      overflow-wrap: break-word;
+    }
+  }
+  
+}

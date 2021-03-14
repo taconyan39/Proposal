@@ -1,0 +1,8 @@
+
+.l-sidebar{
+  width: calc(25% - 20px);
+  margin-right: $spacing_lg;
+  @include mq('md'){
+    display: none;
+  }
+}

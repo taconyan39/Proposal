@@ -3,11 +3,11 @@
 @section('title', '口コミ一覧')
 @section('content')
 
-<div class="l-wrapper__2colum u-site__width">
+<div class="l-wrapper__2colum">
 
   @include('components.sidebar-profile')
   
-  <main class="l-main__2colum u-site__width">
+  <main class="l-main__2colum">
 
     @component('components.simpleList-reviewSection', ['reviews' => $reviews, 'listName' => 'post-idea'])
       @slot('title')

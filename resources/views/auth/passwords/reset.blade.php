@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="l-wrapper__1colum u-site__width">
+<div class="l-wrapper__1colum">
     <div class="p-register">
 
         <div class="card-body">

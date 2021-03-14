@@ -1,0 +1,44 @@
+.p-pickupCategory{
+  &__container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+  }
+  &__item{
+    width: calc(100%/3 - 10px);
+    margin-bottom: $spacing-md;
+    position: relative;
+    @include mq(md){
+      width: calc(100%/2 - 15px);
+    }
+    &--outer{
+      position:relative;
+      & > .c-img{
+        transition: .3s;
+      }
+      &:hover > .c-img{
+        transform: scale(1.1);
+      }
+    }
+  }
+  &__link{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
+  }
+  &__filter{
+    background-color: rgba(0,0,0,.3);
+    position: absolute;
+    height: 100%;
+    padding-top: 30%;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  &__name{
+    text-align: center;
+    color: $color_white;
+  }
+}

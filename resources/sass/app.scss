@@ -1,16 +1,69 @@
 // bootstrap　使わないがデザイン参考用
 // Variables
-@import 'variables';
+// @import 'variables';
 
-// Bootstrap
-// @import '~bootstrap/scss/bootstrap';
+// =======================
+// Foundation
+// =======================
 
-// Fonts
-
-// @import url('https://fonts.googleapis.com/css?family=Nunito');
 @import './foundation/reset';
 @import './foundation/base';
-@import './object/utility/utility';
-@import './layout/layout';
-@import './object/component/component.scss';
+
+// =======================
+// Layout
+// =======================
+
+@import './layout/footer';
+@import './layout/header';
+@import './layout/main';
+@import './layout/sidebar';
+@import './layout/sp_menu';
+@import './layout/wrapper';
+
+// =======================
+// Object
+// =======================
+
+// -----------------------
+// Component
+// -----------------------
+
+@import './object/component/btn';
+@import './object/component/component';
+@import './object/component/error';
+@import './object/component/form';
+@import './object/component/img';
+@import './object/component/info';
+@import './object/component/list';
+@import './object/component/ranking-item';
+@import './object/component/tag';
+@import './object/component/title';
+
+// -----------------------
+// project
+// -----------------------
+
+@import './object/project/aboutSection';
+@import './object/project/categoryList';
+@import './object/project/form';
+@import './object/project/fullList';
+@import './object/project/header';
+@import './object/project/ideaDetail';
+@import './object/project/ideaList';
+@import './object/project/ideaPost';
+@import './object/project/ideaRanking';
+@import './object/project/ideaReviews';
+@import './object/project/pagination';
+@import './object/project/pickupCategory';
+@import './object/project/profileEdit';
+@import './object/project/profileSidebar';
 @import './object/project/project';
+@import './object/project/review';
+@import './object/project/simpleList';
+@import './object/project/userIdeaList';
+
+// -----------------------
+// utility
+// -----------------------
+
+@import './object/utility/utility';

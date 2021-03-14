@@ -1,0 +1,95 @@
+
+.p-ideaReviews{
+  margin-top: $spacing_xxl;
+  margin-bottom: $spacing_xxl;
+  &__bottom{
+    text-align: center;
+    margin: $spacing_lg 0 $spacing_lg;
+  }
+  &__body{
+    box-sizing: border-box;
+    margin-bottom: $spacing-md;
+    &--left{
+      width: 100px;
+      @include mq(md){
+        width: 20%;
+      }
+    }
+    &--right{
+      width: 80%;
+      @include mq(md){
+        width: 70%;
+      }
+    }
+    &--upper{
+      margin-bottom: $spacing_md;
+    }
+    &--title{
+      margin-bottom: 5px;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+  }
+  &__list{
+    padding: $spacing_md;
+  }
+  &__item{
+    padding-top: $spacing_lg;
+    padding-bottom: $spacing_lg;
+  }
+  &--none{
+    text-align: center;
+  }
+  &__userImg{
+    &--outer{
+      width: 50px;
+      height: 50px;
+      margin: 0 $spacing-lg;
+      // @include mq(md){
+        // width: 20%;
+      // }
+    }
+  }
+  &__under{
+    text-align: center;
+    margin: $spacing_lg 0 $spacing_lg;
+  }
+  &__review{
+    &--txt{
+      // overflow: hidden;
+      // text-overflow: ellipsis;
+      // white-space: nowrap;
+      text-align: left;
+    }
+  }
+  &__top{
+    margin-bottom: $spacing-md;
+    align-items: center;
+    flex-wrap: wrap;
+    @include mq(md){
+      flex-direction: column;
+    }
+    &--row{
+      margin-right: $spacing_xl;
+      align-items: center;
+      width: 100%;
+      @include mq(md){
+        margin: 0 auto $spacing-md;
+        display: flex;
+        align-items: center
+      }
+    }
+    &--name{
+      font-size: $font-size_xl;
+    }
+  }
+  &__topBox{
+    margin-right: $spacing-xl;
+  }
+  &__readmore{
+    text-align: center;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}

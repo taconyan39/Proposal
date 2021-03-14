@@ -3,7 +3,7 @@
 @section('title', 'プロフィール編集')
 
 @section('content')
-<div class="l-wrapper__2colum u-site__width">
+<div class="l-wrapper__2colum">
   
     @include('components.sidebar-profile',['user' => $user])
 

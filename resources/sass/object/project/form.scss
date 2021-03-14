@@ -1,0 +1,55 @@
+// form
+.p-login{
+  width: 500px;
+  margin: 5% auto 0;
+  @include mq(md){
+    width: 100%;
+  }
+  &__label{
+    display: block;
+    &--wrapper{
+      display: block;
+      margin-bottom: $spacing-md;
+    }
+  }
+  &__btnBox{
+    align-items: center;
+    box-sizing: border-box;
+    margin-top: $spacing-lg;
+  }
+  &__email{
+    &--txt{
+      margin-bottom: $spacing_xl;
+    }
+  }
+}
+
+.p-register{
+  width: 500px;
+  margin: 5% auto 0;
+  @include mq(md){
+    width: 100%;
+  }
+  &__label{
+    display: block;
+    &--wrapper{
+      display: block;
+      margin-bottom: $spacing_md;
+    }
+  }
+}
+
+.p-passwordEdit{
+  width: 500px;
+  margin: 0 auto;
+  @include mq(md){
+    width: 100%;
+  }
+  &__label{
+    display: block;
+    &--wrapper{
+      display: block;
+      margin-bottom: $spacing_md;
+    }
+  }
+}

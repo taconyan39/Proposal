@@ -3,14 +3,14 @@
 @section('title', 'マイページ')
 @section('content')
 
-<div class="l-wrapper__2colum u-site__width">
+<div class="l-wrapper__2colum">
   <transition name="menu">
       <category-menu v-if="menu" :categories="{{ $categories }}"></category-menu>
   </transition>
 
   @include('components.sidebar-profile', ['user' => $user])
   
-  <main class="l-main__2colum u-site__width">
+  <main class="l-main__2colum">
 
     @component('components.ideasList-section', ['ideas' => $ideas, 'listType' => 0])
 

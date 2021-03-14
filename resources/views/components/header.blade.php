@@ -27,7 +27,7 @@
                 <flash-message id="flash" flash="{{ session('flash_message') }}"></flash-message>
             @endif
 
-            <nav class="u-site__width p-header">
+            <nav class="p-header u-site__width">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <h1 class="c-title__header p-header__title">{{ config('app.name', 'Inspiration') }}</h1>
                 </a>

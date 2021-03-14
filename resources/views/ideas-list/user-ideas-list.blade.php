@@ -3,11 +3,11 @@
 @section('title', 'アイデア一覧')
 @section('content')
 
-<div class="l-wrapper__2colum u-site__width">
+<div class="l-wrapper__2colum">
 
   @include('components.sidebar-profile')
   
-  <main class="l-main__2colum u-site__width">
+  <main class="l-main__2colum">
 
     <h2 class="c-title__section">{{ $user->name }}さんのプロフィール</h2>
     <ul class="c-list p-userIdeaList">

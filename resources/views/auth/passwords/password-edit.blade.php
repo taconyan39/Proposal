@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="l-wrapper__1colum u-site__width">
+<div class="l-wrapper__1colum ">
     <main class="l-main__1colum p-passwordEdit">
             <div class="p-passwordEdit__title c-title__content">
                 <h2 class="c-content__title">パスワード変更</h2>

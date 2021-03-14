@@ -1,0 +1,28 @@
+.c-tag{
+  padding: $spacing-sm;
+  font-size: $font-size_sm;
+  line-height: $font-size_md;
+  border: 1px solid $color_black;
+  background: $color_action;
+  border-radius: 5px;
+  margin-right: $spacing-sm;
+  box-sizing: border-box;
+  color: $color_white;
+  @include mq(md){
+    font-size: $font-size_sm;
+  }
+  &--large{
+    padding: $spacing-sm $spacing-lg;
+    line-height: $font-size_lg;
+    border: 1px solid $color_black;
+    background: $color_action;
+    color: $color_white;
+    border-radius: 5px;
+    margin-right: $spacing-sm;
+    box-sizing: border-box;
+    @include mq(md){
+    font-size: $font-size_sm;
+  }
+    width: $font-size_lg;
+  }
+}

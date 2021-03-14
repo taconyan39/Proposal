@@ -1,0 +1,87 @@
+.c-btn{
+  border: 1px solid $color_gray;
+  padding: $spacing_md $spacing_lg;
+  background: $color_white;
+  box-sizing: border-box;
+  transition: .3s;
+  &:hover{
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  &__sidebar{
+    width: 80%;
+    border: 1px solid $color_gray;
+    padding: $spacing_md $spacing_lg;
+    background: $color_white;
+    box-sizing: border-box;
+    transition: .3s;
+    &:hover{
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+  &--middle{
+    border: 1px solid $color_gray;
+    padding: 0 $spacing_lg;
+    background: $color_white;
+    box-sizing: border-box;
+    transition: .3s;
+    height: 60px;
+    align-items: center;
+    &:hover{
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+  &--large{
+    font-size: $font-size_lg;
+    padding: $spacing-md $spacing-xl;
+    border: 1px solid $color_black;
+    transition: 0.3s;
+    &:hover{
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+  &__wrapper{
+    margin-top: $spacing_xxl;
+    margin-bottom: $spacing_xl;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  &__prompt{
+    margin-left: $spacing_md;
+    font-size: $font-size_md;
+  }
+  &--action{
+    background: $color_action;
+  }
+  &--action2{
+    background: $color_action2;
+    color: $color_white;
+  }
+  &--action3{
+    background: $color_action3;
+  }
+  &--sub{
+    background: $color_sub;
+    transition: .3s;
+    &:hover{
+      background: $color_white;
+    }
+  }
+  &--white{
+    background: $color_white;
+    transition: .3s;
+    &:hover{
+      background: $color_sub;
+    }
+  }
+  &--disable{
+    background: $color_sub;
+    &:hover{
+      opacity: 1;
+      cursor: not-allowed;
+    }
+  }
+}

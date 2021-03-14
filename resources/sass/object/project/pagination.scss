@@ -1,0 +1,16 @@
+// ページネーション
+.p-pagination{
+  display: flex;
+  justify-content: space-around;
+  width: 200px;
+  font-size: $font-size_lg;
+  margin: $spacing-lg auto;
+  &__link{
+    color: $color_gray;
+  }
+  &__item{
+    &.js-active > .p-pagination__link{
+      color: $color_action2;
+    }
+  }
+}

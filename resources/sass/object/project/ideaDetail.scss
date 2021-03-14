@@ -1,0 +1,188 @@
+// アイデア詳細画面
+.p-ideaDetail{
+  &__bottom{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__btn{
+    &--interest{
+      height: 40px;
+      line-height: 40px;
+      font-size: $font-size_md;
+      padding: 0;
+      vertical-align: middle;
+      box-sizing: border-box;
+      background: $color_sub;
+      width: 200px;
+      &::after{
+        font-size: $font-size_default;
+      }
+    }
+  }
+  &__body{
+    width: 100%;
+    box-sizing: border-bx;
+    display: flex;
+    justify-content: flex-start;
+    overflow:hidden;
+    text-overflow: ellipsis;
+  }
+  &__content{
+    padding: $spacing-md $spacing-lg;
+    margin-bottom: $spacing-lg;
+  }
+  &__info{
+    align-items: center;
+    margin-bottom: $spacing-lg;
+    &--left{
+      text-align: start;
+    }
+    &--title{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+    }
+    &--tag{
+      display: inline-block;
+      width: 125px;
+      text-align: center;
+      margin-left: 10px;
+      margin-right: 25px;
+    }
+  }
+  &__infoItem{
+    align-items: center;
+    &--bottom{
+        display: flex;
+        width: 100%;
+        margin-bottom: 10px;
+        overflow:hidden;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+    &--right{
+      align-items: center;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  &__rating{
+    display: inline;
+  }
+  &__review{
+    width: 100%;
+    padding: $spacing-md;
+    margin-top: $spacing-lg;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  &__reviewForm{
+    width: 100%;
+    box-sizing: border-box;
+    &--textarea{
+      width: 80%;
+      height: 80px;
+    }
+  }
+  &__reviewFormRow{
+    &--btn{
+      justify-content: flex-end;
+    }
+    }
+  &__reviewText{
+    padding: $spacing-lg 0;
+    box-sizing: border-box;
+  }
+  &__reviewTitle{
+    font-weight: bold;
+    font-size: $font-size_lg;
+    text-align: center;
+  }
+  &__price{
+    font-size: $font-size_xl;
+    font-weight: bold;
+    margin-right: $spacing_sm;
+    &--wrapper{
+      border: 1px solid $color_black;
+      width: 300px;
+      margin: 0 auto 30px;
+      box-sizing: border-box;
+      padding: $spacing-xxl;
+      background: $color_gray-light;
+    }
+    &--large{
+      $font-size: $font-size_xl;
+      font-weight: bold;
+      font-size: 2rem;
+      color: $color_remove;
+    }
+  }
+  &__summary{
+    font-weight: bold;
+    margin-bottom: $spacing-lg;
+    font-size: $font-size_xl;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    @include mq(md){
+      font-size: $font-size_lg;
+    }
+  }
+  &__text{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    text-align: start;
+    overflow-wrap: break-word;
+    &--wrapper{
+      padding: $spacing-3l $spacing-3l $spacing-lg;
+      box-sizing: border-box;
+      @include mq(md){
+        padding: $spacing-xl $spacing-sm;
+      }
+    }
+    &--not{
+      margin-bottom: $spacing-xxl;
+    }
+  }
+  &__purchased{
+    margin-bottom: $spacing-lg;
+    overflow: hidden;
+    &--not{
+      text-align: center;
+      font-size: $font-size_xl;
+    }
+    &__nologinBtn{
+      &--wrapper{
+        margin-top: 50px;
+      }
+    }
+  }
+  
+  &__user{
+    align-items: center;
+    &--name{
+      font-size: $font-size_lg;
+    }
+  }
+  &__userImg--outer{
+    width: 50px;
+    height: 50px;
+    margin-right: $spacing-lg;
+  }
+  &__nologin{
+    text-align: center;
+      font-size: $font-size_xl;
+    &--wrapper{
+      margin-top: $spacing-3l;
+    }
+  }
+  &__nologinBtn{
+    &--wrapper{
+      margin-top: 50px;
+    }
+  }
+}
