@@ -31,7 +31,7 @@
                         
                     </div>
                     
-                    <a href="{{ url('user/' . $idea->user->id) }}" class="p-ideaDetail__user--name c-link__underline">{{ $idea->user->name }}<a>
+                    <a href="{{ url('user/' . $idea->user->id) }}" class="p-ideaDetail__user--name c-link__underline">{{ $idea->user->name }}</a>
                 </div>
             </div>
 
@@ -59,7 +59,7 @@
                 <p class="p-ideaDetail__reviewText">口コミは投稿済みです</p>
             @else
                 <div class="c-form__row p-postReview__formRow--btn c-flex--center">
-                    <a href="{{ url('post-review/' . $idea->id ) }}" class="c-btn p-postReview__form--btn c-btn--action2">口コミを投稿する</a>
+                    <a href="{{ url('post-review/' . $idea->id) }}" class="c-btn p-postReview__form--btn c-btn--action2">口コミを投稿する</a>
                 </div>
             @endif
         </section>
@@ -70,7 +70,7 @@
                     <p>こちらのアイデアは</p>
                     <p class="p-ideaDetail__price--large">¥{{ $idea->price }}</p>
                     <p>で購入できます</p>
-                    <form action="{{ url('post-idea/buy/' . $idea->id) }}" method="POST">
+                    <form action="{{ url('post-idea/buy/' . $idea->id) }}" method="POST" name="buy">
                     @csrf
                         <buy-component></buy-component>
                     </form>
@@ -81,7 +81,6 @@
 
             <div class="c-article__bottom p-ideaDetail__bottom">
                 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
-
                 <interest-component :id="{{ $idea->id }}" :interest="@json($interest_flg)"></interest-component>
             </div>
         @endif

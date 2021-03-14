@@ -24,7 +24,7 @@
       
       <div class="p-ideaDetail__info c-row c-flex--between">
           <div>
-              <span class="c-tag--large p-ideaDetail__infoItem--tag">{{ $idea->category->name }}</span>
+              <span class="c-tag--large p-ideaDetail__infoItem--tag">{{ $idea->category->name_ja }}</span>
           </div>
           <div class="c-flex--end p-ideaDetail__user">
               <div class="c-img--outer c-img--round p-ideaDetail__userImg--outer">

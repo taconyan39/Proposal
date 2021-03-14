@@ -1,33 +1,37 @@
 <template>
 <!-- レビュー投稿用のコンポーネント -->
-    <label for="review" class="c-form__label">
-        <textarea class="c-form__textarea p-postReview__form--textare"             name="review"
-        id="review"
-        maxlength="200"
-        v-model.trim="review"
-        placeholder="200文字以内で入力してください"></textarea>
-        <div class="c-form__countLength c-flex--end p-ideaPost__count">
-            <span>{{ review.length}}/200</span>
-        </div>
-    </label>
-
+    <div class="c-form__row p-postReview__formRow--btn c-flex--end">
+        <button @click.prevent="onSubmit()" class="c-btn p-postReview__form--btn c-btn--action2">口コミを投稿する</button>
+        <v-dialog></v-dialog>
+    </div>
 </template>
 
 <script>
+import VModal from 'vue-js-modal';
+Vue.use(VModal, {dialog: true});
+
 export default {
-  props: ['oldreview'],
-  data: function(){
-    return {
-      review: (this.oldreview) ? this.oldreview : '' ,
+    methods: {
+        onSubmit(){
+            //   投稿の確認
+            this.$modal.show('dialog', {
+                title: 'レビューの投稿',
+                text: '投稿しますか？',
+                buttons: [{
+                    title: '投稿する',
+                    handler: () => {
+                       document.review.submit();
+                    }
+                },
+                {
+                    title: 'キャンセル',
+                    handler: () => {
+                        this.$modal.hide('dialog')
+                    }
+                }
+                ]
+            });
+        }
     }
-  },
-  methods: {
-    onSubmit(){
-      // 投稿の確認
-      if(!confirm('投稿します。よろしいですか？')){
-        return ;
-      }
-    }
-  }
 }
 </script>

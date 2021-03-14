@@ -1970,12 +1970,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
     onBuy: function onBuy() {
-      if (confirm('購入を確定しますか？')) {
-        document.getElementById('buy').submit();
-      }
+      var _this = this;
+
+      //   購入の確認
+      this.$modal.show('dialog', {
+        title: 'アイデアの購入',
+        text: '購入しますか？',
+        buttons: [{
+          title: '購入する',
+          handler: function handler() {
+            document.buy.submit();
+          }
+        }, {
+          title: 'キャンセル',
+          handler: function handler() {
+            _this.$modal.hide('dialog');
+          }
+        }]
+      });
     }
   }
 });
@@ -2000,20 +2017,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
-Vue.use(vue_js_modal__WEBPACK_IMPORTED_MODULE_0___default.a);
+Vue.use(vue_js_modal__WEBPACK_IMPORTED_MODULE_0___default.a, {
+  dialog: true
+});
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
     show: function show() {
-      this.$modal.show('hello-world');
+      var _this = this;
+
+      this.$modal.show('dialog', {
+        title: 'アイデアの投稿',
+        text: '投稿しますか？',
+        buttons: [{
+          title: '投稿する',
+          handler: function handler() {
+            alert('投稿しました');
+          }
+        }, {
+          title: 'キャンセル',
+          handler: function handler() {
+            _this.$modal.hide('dialog');
+          }
+        }]
+      });
     },
     hide: function hide() {
       this.$modal.hide('hello-world');
@@ -2139,6 +2166,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_js_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-js-modal */ "./node_modules/vue-js-modal/dist/index.js");
+/* harmony import */ var vue_js_modal__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_js_modal__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2260,6 +2289,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
+Vue.use(vue_js_modal__WEBPACK_IMPORTED_MODULE_0___default.a, {
+  dialog: true
+});
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['categories', 'delete', 'edit', 'idea', 'mypage'],
   data: function data() {
@@ -2277,34 +2311,48 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     onSubmit: function onSubmit() {
+      var _this = this;
+
       //   投稿の確認
-      if (!confirm('投稿します。よろしいですか？')) {
-        return;
-      } // 送信データの格納
+      this.$modal.show('dialog', {
+        title: 'アイデアの編集',
+        text: '編集しますか？',
+        buttons: [{
+          title: '編集する',
+          handler: function handler() {
+            // 送信データの格納
+            var params = {
+              category_id: _this.category_id,
+              price: Number(_this.price),
+              title: _this.title,
+              summary: _this.summary,
+              content: _this.content
+            };
+            _this.errors = {};
+            var self = _this; // アイデアの更新
 
+            axios.put('/post-idea/' + _this.id, params).then(function () {
+              self.editIdea = true;
+              self.$emit("edit-idea", self.editIdea);
+            })["catch"](function (error) {
+              // 送信失敗時の処理
+              var errors = {};
 
-      var params = {
-        category_id: this.category_id,
-        price: Number(this.price),
-        title: this.title,
-        summary: this.summary,
-        content: this.content
-      };
-      this.errors = {};
-      var self = this; // アイデアの更新
+              for (var key in error.response.data.errors) {
+                errors[key] = error.response.data.errors[key].join('<br>');
+                ;
+              }
 
-      axios.put('/post-idea/' + this.id, params).then(function () {
-        self.editIdea = true;
-      })["catch"](function (error) {
-        // 送信失敗時の処理
-        var errors = {};
-
-        for (var key in error.response.data.errors) {
-          errors[key] = error.response.data.errors[key].join('<br>');
-          ;
-        }
-
-        self.errors = errors;
+              self.errors = errors;
+              self.$modal.hide('dialog');
+            });
+          }
+        }, {
+          title: 'キャンセル',
+          handler: function handler() {
+            _this.$modal.hide('dialog');
+          }
+        }]
       });
     },
     // 情報の取得
@@ -2333,6 +2381,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_js_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-js-modal */ "./node_modules/vue-js-modal/dist/index.js");
+/* harmony import */ var vue_js_modal__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_js_modal__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2443,19 +2493,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+Vue.use(vue_js_modal__WEBPACK_IMPORTED_MODULE_0___default.a, {
+  dialog: true
+});
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['categories', 'url'],
   data: function data() {
@@ -2471,33 +2512,45 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     onSubmit: function onSubmit() {
-      //   投稿の確認
-      if (!confirm('投稿します。よろしいですか？')) {
-        return;
-      } // 送信データの格納
+      var _this = this;
 
+      this.$modal.show('dialog', {
+        title: 'アイデアの投稿',
+        text: '投稿しますか？',
+        buttons: [{
+          title: '投稿する',
+          handler: function handler() {
+            // 送信データの格納
+            var params = {
+              category_id: _this.category_id,
+              price: Number(_this.price),
+              title: _this.title,
+              summary: _this.summary,
+              content: _this.content
+            };
+            _this.errors = {};
+            var self = _this;
+            axios.post('/post-idea', params).then(function () {
+              self.postIdea = true;
+            })["catch"](function (error) {
+              // 送信失敗時の処理
+              var errors = {};
 
-      var params = {
-        category_id: this.category_id,
-        price: Number(this.price),
-        title: this.title,
-        summary: this.summary,
-        content: this.content
-      };
-      this.errors = {};
-      var self = this;
-      axios.post('/post-idea', params).then(function () {
-        self.postIdea = true;
-      })["catch"](function (error) {
-        // 送信失敗時の処理
-        var errors = {};
+              for (var key in error.response.data.errors) {
+                errors[key] = error.response.data.errors[key].join('<br>');
+                ;
+              }
 
-        for (var key in error.response.data.errors) {
-          errors[key] = error.response.data.errors[key].join('<br>');
-          ;
-        }
-
-        self.errors = errors;
+              self.errors = errors;
+              self.$modal.hide('dialog');
+            });
+          }
+        }, {
+          title: 'キャンセル',
+          handler: function handler() {
+            _this.$modal.hide('dialog');
+          }
+        }]
       });
     }
   }
@@ -2675,6 +2728,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_js_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-js-modal */ "./node_modules/vue-js-modal/dist/index.js");
+/* harmony import */ var vue_js_modal__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_js_modal__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2683,13 +2738,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
+Vue.use(vue_js_modal__WEBPACK_IMPORTED_MODULE_0___default.a, {
+  dialog: true
+});
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
     onRemove: function onRemove() {
+      var _this = this;
+
       //   削除の確認
-      if (!confirm('削除します。よろしいですか？')) {
-        return;
-      }
+      this.$modal.show('dialog', {
+        title: 'アイデアの削除',
+        text: '削除しますか？',
+        buttons: [{
+          title: '削除する',
+          handler: function handler() {
+            document["delete"].submit();
+          }
+        }, {
+          title: 'キャンセル',
+          handler: function handler() {
+            _this.$modal.hide('dialog');
+          }
+        }]
+      });
     }
   }
 });
@@ -2778,6 +2851,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_js_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-js-modal */ "./node_modules/vue-js-modal/dist/index.js");
+/* harmony import */ var vue_js_modal__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_js_modal__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2786,26 +2861,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
+
+Vue.use(vue_js_modal__WEBPACK_IMPORTED_MODULE_0___default.a, {
+  dialog: true
+});
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['oldreview'],
-  data: function data() {
-    return {
-      review: this.oldreview ? this.oldreview : ''
-    };
-  },
   methods: {
     onSubmit: function onSubmit() {
-      // 投稿の確認
-      if (!confirm('投稿します。よろしいですか？')) {
-        return;
-      }
+      var _this = this;
+
+      //   投稿の確認
+      this.$modal.show('dialog', {
+        title: 'レビューの投稿',
+        text: '投稿しますか？',
+        buttons: [{
+          title: '投稿する',
+          handler: function handler() {
+            document.review.submit();
+          }
+        }, {
+          title: 'キャンセル',
+          handler: function handler() {
+            _this.$modal.hide('dialog');
+          }
+        }]
+      });
     }
   }
 });
@@ -2821,6 +2901,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -60805,13 +60888,30 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "c-btn__wrapper p-buy__btn--wrapper" }, [
-    _c("input", {
-      staticClass: "c-btn--large p-buy__btn\n        c-btn--action2\n        ",
-      attrs: { type: "submit", value: "購入する", name: "buy", id: "buy" },
-      on: { click: _vm.onBuy }
-    })
-  ])
+  return _c(
+    "div",
+    { staticClass: "c-btn__wrapper p-buy__btn--wrapper" },
+    [
+      _c(
+        "button",
+        {
+          staticClass:
+            "c-btn--large p-buy__btn\n        c-btn--action2\n        ",
+          attrs: { name: "buy", id: "buy" },
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              return _vm.onBuy($event)
+            }
+          }
+        },
+        [_vm._v("\n            購入する\n        ")]
+      ),
+      _vm._v(" "),
+      _c("v-dialog")
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -60838,25 +60938,9 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("button", { staticClass: "button", on: { click: _vm.show } }, [
-        _vm._v("show!")
-      ]),
+      _c("button", { on: { click: _vm.show } }, [_vm._v("投稿する")]),
       _vm._v(" "),
-      _c(
-        "modal",
-        { attrs: { name: "hello-world", draggable: true, resizable: true } },
-        [
-          _c("div", { staticClass: "modal-header" }, [
-            _c("h2", [_vm._v("Modal title")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "modal-body" }, [
-            _c("p", [_vm._v("投稿します。よろしいですか？")]),
-            _vm._v(" "),
-            _c("button", { on: { click: _vm.hide } }, [_vm._v("閉じる")])
-          ])
-        ]
-      )
+      _c("v-dialog")
     ],
     1
   )
@@ -61303,22 +61387,29 @@ var render = function() {
             domProps: { innerHTML: _vm._s(_vm.errors.content) }
           }),
           _vm._v(" "),
-          _c("div", { staticClass: "c-flex--end p-ideaPost__btn--container" }, [
-            _c(
-              "button",
-              {
-                staticClass:
-                  "c-btn       c-form__btn\n            c-btn--action2\n            p-ideaPost__btn",
-                on: {
-                  click: function($event) {
-                    $event.stopPropagation()
-                    return _vm.onSubmit()
+          _c(
+            "div",
+            { staticClass: "c-flex--end p-ideaPost__btn--container" },
+            [
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "c-btn       c-form__btn\n            c-btn--action2\n            p-ideaPost__btn",
+                  on: {
+                    click: function($event) {
+                      $event.stopPropagation()
+                      return _vm.onSubmit()
+                    }
                   }
-                }
-              },
-              [_vm._v("\n                        編集する\n            ")]
-            )
-          ])
+                },
+                [_vm._v("\n                        編集する\n            ")]
+              ),
+              _vm._v(" "),
+              _c("v-dialog")
+            ],
+            1
+          )
         ])
       : _c("div", { staticClass: "c-form p-ideaPost__form--posted" }, [
           _c("p", [_vm._v("編集されました")]),
@@ -61375,7 +61466,7 @@ var render = function() {
                 attrs: { for: "category_id" }
               },
               [
-                _vm._v("\n        カテゴリー\n\n        "),
+                _vm._v("\n            カテゴリー\n\n            "),
                 _c(
                   "select",
                   {
@@ -61443,7 +61534,7 @@ var render = function() {
                 attrs: { for: "title" }
               },
               [
-                _vm._v("\n        アイデア名\n\n        "),
+                _vm._v("\n            アイデア名\n            "),
                 _c("input", {
                   directives: [
                     {
@@ -61504,7 +61595,7 @@ var render = function() {
                 attrs: { for: "price" }
               },
               [
-                _vm._v("\n            価格\n\n            "),
+                _vm._v("\n            価格\n            "),
                 _c("div", { staticClass: "p-ideaList__row c-flex--start" }, [
                   _c("div", { staticClass: "p-ideaPost__price--mark " }, [
                     _vm._v("￥")
@@ -61558,9 +61649,7 @@ var render = function() {
                 attrs: { for: "summary" }
               },
               [
-                _vm._v(
-                  "\n                    概要\n                    \n                    "
-                ),
+                _vm._v("\n            概要\n            "),
                 _c("textarea", {
                   directives: [
                     {
@@ -61572,7 +61661,7 @@ var render = function() {
                     }
                   ],
                   staticClass:
-                    "p-ideaPost__textarea\n                    c-form__textarea is-invalid",
+                    "p-ideaPost__textarea\n            c-form__textarea is-invalid",
                   attrs: {
                     id: "summary",
                     type: "summary",
@@ -61621,9 +61710,7 @@ var render = function() {
                 attrs: { for: "content" }
               },
               [
-                _vm._v(
-                  "\n                        アイデアの詳細\n                    \n                        "
-                ),
+                _vm._v("\n            アイデアの詳細\n            "),
                 _c("textarea", {
                   directives: [
                     {
@@ -61635,7 +61722,7 @@ var render = function() {
                     }
                   ],
                   staticClass:
-                    "p-ideaPost__textarea\n                        c-form__textarea  is-invalid\n                        \n                        ",
+                    "p-ideaPost__textarea\n            c-form__textarea  is-invalid\n            ",
                   attrs: {
                     id: "content",
                     name: "content",
@@ -61660,7 +61747,7 @@ var render = function() {
                   "div",
                   {
                     staticClass:
-                      "p-ideaPost__count\n                            c-form__countLength  c-flex--between"
+                      "p-ideaPost__count\n            c-form__countLength  c-flex--between"
                   },
                   [
                     _c("p", { staticClass: "p-ideaPost__annotation" }, [
@@ -61695,13 +61782,12 @@ var render = function() {
                       }
                     }
                   },
-                  [
-                    _vm._v(
-                      "\n                            投稿する\n                "
-                    )
-                  ]
-                )
-              ]
+                  [_vm._v("\n                        投稿する\n            ")]
+                ),
+                _vm._v(" "),
+                _c("v-dialog")
+              ],
+              1
             )
           ]
         )
@@ -61869,7 +61955,7 @@ var render = function() {
           },
           [
             _c("span", { staticClass: "c-star" }),
-            _vm._v("\n    気になる"),
+            _vm._v("\n        気になる"),
             _c("br"),
             _vm._v("を解除する")
           ]
@@ -61913,15 +61999,15 @@ var render = function() {
   return _c(
     "button",
     {
-      staticClass: "c-btn       c-form__btn p-ideaPost__btn--remove",
-      attrs: { type: "submit" },
+      staticClass: "c-btn c-form__btn p-ideaPost__btn--remove",
       on: {
         click: function($event) {
+          $event.preventDefault()
           return _vm.onRemove()
         }
       }
     },
-    [_vm._v("\n                              削除する\n                  ")]
+    [_vm._v("\n        削除する\n    ")]
   )
 }
 var staticRenderFns = []
@@ -62032,46 +62118,26 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "label",
-    { staticClass: "c-form__label", attrs: { for: "review" } },
+    "div",
+    { staticClass: "c-form__row p-postReview__formRow--btn c-flex--end" },
     [
-      _c("textarea", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model.trim",
-            value: _vm.review,
-            expression: "review",
-            modifiers: { trim: true }
-          }
-        ],
-        staticClass: "c-form__textarea p-postReview__form--textare",
-        attrs: {
-          name: "review",
-          id: "review",
-          maxlength: "200",
-          placeholder: "200文字以内で入力してください"
-        },
-        domProps: { value: _vm.review },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.review = $event.target.value.trim()
-          },
-          blur: function($event) {
-            return _vm.$forceUpdate()
-          }
-        }
-      }),
-      _vm._v(" "),
       _c(
-        "div",
-        { staticClass: "c-form__countLength c-flex--end p-ideaPost__count" },
-        [_c("span", [_vm._v(_vm._s(_vm.review.length) + "/200")])]
-      )
-    ]
+        "button",
+        {
+          staticClass: "c-btn p-postReview__form--btn c-btn--action2",
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              return _vm.onSubmit()
+            }
+          }
+        },
+        [_vm._v("口コミを投稿する")]
+      ),
+      _vm._v(" "),
+      _c("v-dialog")
+    ],
+    1
   )
 }
 var staticRenderFns = []
@@ -62182,7 +62248,18 @@ var render = function() {
                   [_vm._v("アイデアを探す")]
                 )
               ]
-            )
+            ),
+            _vm._v(" "),
+            _c("li", { staticClass: "p-profileSidebar__item c-flex--center" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "c-btn c-btn--action3 p-profileSidebar__btn",
+                  attrs: { href: _vm.howto }
+                },
+                [_vm._v("利用方法を見る")]
+              )
+            ])
           ])
         ])
       : _c("ul", [
@@ -74556,7 +74633,8 @@ var app = new Vue({
   el: '#app',
   data: function data() {
     return {
-      menu: false
+      menu: false,
+      editIdea: false
     };
   }
 });

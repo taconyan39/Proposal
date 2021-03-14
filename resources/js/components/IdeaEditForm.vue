@@ -105,6 +105,7 @@
                     @click.stop="onSubmit()">
                         編集する
             </button>
+            <v-dialog></v-dialog>
         </div>
     </div>
 
@@ -120,6 +121,9 @@
 </template>
 
 <script>
+import VModal from 'vue-js-modal';
+Vue.use(VModal, {dialog: true});
+
 export default {
     props:['categories', 'delete','edit', 'idea', 'mypage'],
     data: function(){
@@ -137,38 +141,52 @@ export default {
     },
     methods:{
         onSubmit(){
-            
         //   投稿の確認
-        if(!confirm('投稿します。よろしいですか？')) {
-            return;
-        }
+        this.$modal.show('dialog', {
+            title: 'アイデアの編集',
+            text: '編集しますか？',
+            buttons: [{
+                title: '編集する',
+                handler: () => {
+                    // 送信データの格納
+                    var params ={
+                            category_id: this.category_id,
+                            price: Number(this.price),
+                            title: this.title,
+                            summary: this.summary,
+                            content: this.content,
+                        }
 
-        // 送信データの格納
-        var params ={
-                category_id: this.category_id,
-                price: Number(this.price),
-                title: this.title,
-                summary: this.summary,
-                content: this.content,
-            }
+                    this.errors = {};
+                    var self = this;
 
-        this.errors = {};
-        var self = this;
-
-        // アイデアの更新
-        axios.put('/post-idea/' + this.id, params)
-            .then(function(){
-                self.editIdea = true
-            })
-            .catch(function(error){
-                // 送信失敗時の処理
-                var errors = {};
-                for(var key in error.response.data.errors) {
-                    errors[key] = error.response.data.errors[key].join('<br>');;
+                    // アイデアの更新
+                    axios.put('/post-idea/' + this.id, params)
+                        .then(function(){
+                            self.editIdea = true
+                            self.$emit("edit-idea", self.editIdea);
+                        })
+                        .catch(function(error){
+                            // 送信失敗時の処理
+                            var errors = {};
+                            for(var key in error.response.data.errors) {
+                                errors[key] = error.response.data.errors[key].join('<br>');;
+                            }
+                            self.errors = errors;
+                            self.$modal.hide('dialog');
+                    });
                 }
-                self.errors = errors;
-            });
+            },
+            {
+                title: 'キャンセル',
+                handler: () => {
+                    this.$modal.hide('dialog')
+                }
+            }
+            ]
+        });
         },
+
         // 情報の取得
         getItem() {
             this.id = this.idea.id;

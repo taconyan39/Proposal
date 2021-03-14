@@ -17,7 +17,7 @@
 
         <div class="p-ideaDetail__info c-info">
 
-    <div class="c-info__box p-ideaDetail__infoItem--left">
+        <div class="c-info__box p-ideaDetail__infoItem--left">
                 <time class="p-ideaDetail__info--date">{{ $idea->created_at->format('Y/m/d') }}</time>
             </div>
 
@@ -55,7 +55,7 @@
         <div class="p-ideaPost__title">
         <h3 class="c-title__content">口コミを投稿する</h3>
     </div>
-    <form action="{{ url('reviews/' . $idea->id)}}" method="POST">
+    <form action="{{ url('reviews/' . $idea->id)}}" method="POST" name="review">
         @csrf
         <div class="p-ideaDetail__reviewForm ">
             <label class="c-flex--start p-ideaDetail__reviewForm--row">
@@ -79,7 +79,14 @@
                     </span>
                 @enderror
             </div>
-            <post-review oldreview="{{ old('review')}}"></post-review>
+            <textarea-label
+                title="口コミの内容"
+                oldreview="{{ old('review')}}"
+                max="200"
+                name="review"
+                placeholder="200文字以内で入力してください"
+              
+              ></textarea-label>
 
             <div class="c-flex--end">
                 @error('review')
@@ -89,14 +96,16 @@
                 @enderror
             </div>
 
-            <div class="c-form__row p-postReview__formRow--btn c-flex--end">
+            <post-review></post-review>
+
+            <!-- <div class="c-form__row p-postReview__formRow--btn c-flex--end">
                 <button type="submit" class="c-btn p-postReview__form--btn c-btn--action2">口コミを投稿する</button>
-            </div>
+            </div> -->
         </form>
     <div>
 
-        <!-- レビューがあるかどうかの判別でエラーが出ていることを解決する -->
-        <idea-reviews :id="{{$idea->id}}"></idea-reviews>
+    <!-- レビューがあるかどうかの判別でエラーが出ていることを解決する -->
+    <idea-reviews :id="{{$idea->id}}"></idea-reviews>
         
       <a href="{{url()->previous()}}">&lt;&lt; 前のページに戻る</a>
     </main>

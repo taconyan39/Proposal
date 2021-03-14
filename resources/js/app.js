@@ -51,6 +51,7 @@ const app = new Vue({
     data: function() {
       return {
         menu: false,
+        editIdea: false,
       }
     }
     
