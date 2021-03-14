@@ -79,6 +79,7 @@
                             name="{{session('name')}}"
                             register="{{ route('register')}}"
                             list="{{ url('all-ideas-list') }}"
+                            howto="{{ url('/')}}"
                             noimg="{{ asset('images/default/icons/noimage_icon.jpg') }}"
                             mypage="{{url('mypage')}}"
                             profedit="{{route('profile.edit')}}"

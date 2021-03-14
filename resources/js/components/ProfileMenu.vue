@@ -41,6 +41,9 @@
         <li class="c-list__item-simple p-profileSidebar__item">
           <a :href="list" class="c-btn__sidebar c-btn--sub p-profileSidebar__btn">アイデアを探す</a>
         </li>
+        <li class="p-profileSidebar__item c-flex--center">
+          <a :href="howto" class="c-btn c-btn--action3 p-profileSidebar__btn">利用方法を見る</a>
+        </li>
       </div>
     </ul>
 
@@ -49,6 +52,6 @@
 
 <script>
 export default {
-    props:['img','login','register', 'list', 'name','noimg','mypage', 'profedit', 'postidea', 'all-ideaslist'],
+    props:['img','login','register', 'list', 'name','noimg','mypage', 'profedit', 'postidea', 'all-ideaslist', 'howto'],
 }
 </script>

@@ -3,20 +3,19 @@
 @section('title', 'マイページ')
 @section('content')
 
-<div class="l-wrapper__1colum">
+<div class="l-wrapper__about">
   
-  <main class="l-main__1colum u-site__width">
+  <main class="l-main__about u-site__width">
 
-    <div class="c-img-outer">
-      <img src="{{ asset('images/default/key_visual.png') }}" srcset="{{ asset('images/retina_2x/key_visual.png 2x') }}"alt="" class="c-img">
-
+    <div class="c-img-outer p-aboutSection__img--outer">
+        <img src="{{ asset('images/default/key_visual.png') }}" srcset="{{ asset('images/retina_2x/key_visual.png 2x') }}"alt="" class="c-img">
+      </div>
+      
       <div class="p-aboutSection__btn--wrapper c-flex--around">
         <a href="{{ route('register') }}" class="c-btn--large c-btn--action p-aboutSection__btn">会員登録する</a>
         <a href="{{ url('index') }}" class="c-btn--large c-btn--action3 p-aboutSection__btn">アイデアを探す</a>
       </div>
-
-    </div>
-
+      
     <section class="p-aboutSection">
 
       <div class="p-aboutSection__wrapper u-site__width">

@@ -38,7 +38,16 @@
       padding-right: 3%;
       padding-left: 3%;
     }
-    
+  }
+  &__about{
+    margin-top: 120px;
+    margin-bottom: $spacing_3l;
+    box-sizing: border-box;
+    overflow:hidden;
+    flex-wrap: wrap;
+    @include mq(){
+      margin-top: 25%;
+    }
   }
 }
 
@@ -59,6 +68,10 @@
     @include mq(md){
       width: 100%;
     }
+  }
+  &__about{
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 

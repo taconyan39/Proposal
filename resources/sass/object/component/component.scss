@@ -18,6 +18,7 @@
     font-size: $font-size_xxl;
     margin-bottom: $spacing-lg;
     text-align: center;
+    
     @include mq(md){
       font-size: $font-size_xl;
     }

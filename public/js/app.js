@@ -2870,8 +2870,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['img', 'login', 'register', 'list', 'name', 'noimg', 'mypage', 'profedit', 'postidea', 'all-ideaslist']
+  props: ['img', 'login', 'register', 'list', 'name', 'noimg', 'mypage', 'profedit', 'postidea', 'all-ideaslist', 'howto']
 });
 
 /***/ }),
@@ -62244,7 +62247,18 @@ var render = function() {
                   [_vm._v("アイデアを探す")]
                 )
               ]
-            )
+            ),
+            _vm._v(" "),
+            _c("li", { staticClass: "p-profileSidebar__item c-flex--center" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "c-btn c-btn--action3 p-profileSidebar__btn",
+                  attrs: { href: _vm.howto }
+                },
+                [_vm._v("利用方法を見る")]
+              )
+            ])
           ])
         ])
   ])
