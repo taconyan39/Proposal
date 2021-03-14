@@ -569,6 +569,7 @@
     
     &--left{
       width: 100px;
+      text-align: center;
       @include mq(md){
         width: 40%;
       }
@@ -665,6 +666,7 @@
     margin: 0 auto $spacing_md;
     padding: $spacing-sm $spacing-md;
     text-align: center;
+    font-size: $font-size_lg;
   }
   &__card{
     box-sizing: border-box;

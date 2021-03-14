@@ -72,7 +72,6 @@ class MypageController extends Controller
             $interestIdea->rating = sprintf('%.1f',$interestIdea->reviews->avg('rating'));
             $interestIdea->countReview = $interestIdea->reviews->count();
         }
-                    
 
         // レビューを日付順に取得
         $ideaReviews = Review::whereHas('idea', function($q) use ($user_id){

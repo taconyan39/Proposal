@@ -38,7 +38,7 @@
               alt="">
             </div>
 
-            <span class="c-link__underline">{{ $item->user->name }}</span>
+            <span class="p-simpleList__userName">{{ $item->user->name }}</span>
             
           </div>
 

@@ -28,7 +28,7 @@
             @endif
 
             <nav class="u-site__width p-header">
-                <a class="navbar-brand" href="{{ url('/index') }}">
+                <a class="navbar-brand" href="{{ url('/') }}">
                     <h1 class="c-title__header p-header__title">{{ config('app.name', 'Inspiration') }}</h1>
                 </a>
 
@@ -76,6 +76,7 @@
             <profile-menu   v-if="menu"
                             img="{{session('icon_img')}}"
                             login="{{ route('login')}}"
+                            logout="{{ route('logout') }}"
                             name="{{session('name')}}"
                             register="{{ route('register')}}"
                             list="{{ url('all-ideas-list') }}"

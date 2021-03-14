@@ -21,10 +21,6 @@ class Idea extends Model
         return $this->hasMany('App\Review');
     }
 
-    public function latestInterests(){
-        return $this->hasMany('App\Interest')->orderBy('created_at', 'desc');
-    }
-
     public function interests(){
         return $this->hasMany('App\Interest');
     }

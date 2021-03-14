@@ -2956,8 +2956,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['img', 'login', 'register', 'list', 'name', 'noimg', 'mypage', 'profedit', 'postidea', 'all-ideaslist', 'howto']
+  props: ['img', 'login', 'logout', 'register', 'list', 'name', 'noimg', 'mypage', 'profedit', 'postidea', 'all-ideaslist', 'howto'],
+  methods: {
+    onSubmit: function onSubmit() {
+      document.getElementById('logout-form').submit();
+    }
+  }
 });
 
 /***/ }),
@@ -62249,6 +62260,24 @@ var render = function() {
                 )
               ]
             ),
+            _vm._v(" "),
+            _c("li", { staticClass: "p-profileSidebar__item c-flex--center" }, [
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "c-btn c-btn--action3 p-profileSidebar__btn c-btn--sub",
+                  attrs: { href: _vm.logout },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.onSubmit()
+                    }
+                  }
+                },
+                [_vm._v("ログアウト")]
+              )
+            ]),
             _vm._v(" "),
             _c("li", { staticClass: "p-profileSidebar__item c-flex--center" }, [
               _c(

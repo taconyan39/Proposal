@@ -25,6 +25,11 @@
           <a :href="list" class="c-btn__sidebar c-btn__sub p-profileSidebar__btn">アイデアを探す</a>
         </li>
         <li class="p-profileSidebar__item c-flex--center">
+          <button :href="logout" class="c-btn c-btn--action3 p-profileSidebar__btn c-btn--sub"
+          @click.prevent="onSubmit()"
+          >ログアウト</button>
+        </li>
+        <li class="p-profileSidebar__item c-flex--center">
           <a :href="howto" class="c-btn c-btn--action3 p-profileSidebar__btn">利用方法を見る</a>
         </li>
       </div>
@@ -42,7 +47,8 @@
             <a class="c-btn__sidebar c-btn--action p-profileSidebar__btn" :href="register">登録する</a>
         </li>
         <li class="c-list__item-simple p-profileSidebar__item">
-          <a :href="list" class="c-btn__sidebar c-btn--sub p-profileSidebar__btn">アイデアを探す</a>
+          <a :href="list" class="c-btn__sidebar c-btn--sub p-profileSidebar__btn"
+          >アイデアを探す</a>
         </li>
         <li class="p-profileSidebar__item c-flex--center">
           <a :href="howto" class="c-btn c-btn--action3 p-profileSidebar__btn">利用方法を見る</a>
@@ -55,6 +61,11 @@
 
 <script>
 export default {
-    props:['img','login','register', 'list', 'name','noimg','mypage', 'profedit', 'postidea', 'all-ideaslist', 'howto'],
+    props:['img','login', 'logout', 'register', 'list', 'name','noimg','mypage', 'profedit', 'postidea', 'all-ideaslist', 'howto'],
+    methods: {
+        onSubmit(){
+            document.getElementById('logout-form').submit();
+        }
+    }
 }
 </script>

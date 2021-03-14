@@ -1784,6 +1784,7 @@ select {
 
 .p-simpleList__body--left {
   width: 100px;
+  text-align: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -1901,6 +1902,7 @@ select {
   margin: 0 auto 10px;
   padding: 5px 10px;
   text-align: center;
+  font-size: 1.2rem;
 }
 
 .p-profileSidebar__card {
