@@ -26,16 +26,12 @@ class ReviewsController extends Controller
 
     public function postForm($id){
         
-        if(!ctype_digit($id)){
+        $idea = Idea::find($id);
+        if(!ctype_digit($id) || $idea === null){
             return redirect('mypage')->with('flash_message', __('Invalid operation was performed.'));
         }
 
         $user = Auth::user();
-        $idea = Idea::find($id);
-
-        if($idea === null){
-           abort(404); 
-        }
         
         if($idea->user->id === $user->id){
             return  redirect('mypage');

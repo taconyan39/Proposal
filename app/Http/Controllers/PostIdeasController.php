@@ -23,7 +23,7 @@ class PostIdeasController extends Controller
     public function index()
     {
 
-        return redirect('all-ideas-list');
+        return redirect('all-ideas-');
     }
 
     /**

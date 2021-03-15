@@ -18,16 +18,13 @@ class ShowIdeaController extends Controller
     // アイデアの表示
     public function show($id){
 
-            if(!ctype_digit($id)){
+            $idea = Idea::find($id);
+
+            if(!ctype_digit($id) || $idea === null){
                 return redirect('mypage')->with('flash_message', __('Invalid operation was performed.'));
             }
     
             $user = Auth::user();
-            $idea = Idea::find($id);
-
-            if($idea === null){
-               abort(404); 
-            }
 
             $idea->rating = sprintf('%.1f',$idea->reviews()->avg('rating'));
             $idea->countReview = $idea->reviews->count();

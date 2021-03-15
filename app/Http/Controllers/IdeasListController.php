@@ -171,14 +171,10 @@ class IdeasListController extends Controller
 
     public function userIdeas($id){
 
-        if(!ctype_digit($id)){
-            return redirect('mypage')->with('flash_message', __('Invalid operation was performed.'));
-        }
-
         $user = User::find($id);
 
-        if($user === null){
-           abort(404); 
+        if(!ctype_digit($id) || $user === null){
+            return redirect('mypage')->with('flash_message', __('Invalid operation was performed.'));
         }
 
         if(Auth::check()){
