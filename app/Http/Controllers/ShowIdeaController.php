@@ -40,7 +40,6 @@ class ShowIdeaController extends Controller
             if($user->id === $idea->user_id){
                 return redirect('post-idea/'. $id);
             }
-            
 
             // 購入済みの場合の処理
             if(DB::table('buy_ideas')->where('user_id', $user->id)->where('idea_id', $idea->id)->exists()){

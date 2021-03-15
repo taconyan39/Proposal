@@ -96,11 +96,8 @@
                 @enderror
             </div>
 
-            <post-review></post-review>
-
-            <!-- <div class="c-form__row p-postReview__formRow--btn c-flex--end">
-                <button type="submit" class="c-btn p-postReview__form--btn c-btn--action2">口コミを投稿する</button>
-            </div> -->
+            <post-review></post-review v-cloak>
+            
         </form>
     <div>
 

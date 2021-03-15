@@ -25,9 +25,23 @@ class ReviewsController extends Controller
     }
 
     public function postForm($id){
-        // TODO アイデアを既に投稿していないかの処理
+        
+        if(!ctype_digit($id)){
+            return redirect('mypage')->with('flash_message', __('Invalid operation was performed.'));
+        }
+
         $user = Auth::user();
         $idea = Idea::find($id);
+
+        if($idea === null){
+           abort(404); 
+        }
+        
+        if($idea->user->id === $user->id){
+            return  redirect('mypage');
+        }elseif(Review::where('idea_id', $id)->where('user_id', $user->id)->exists()){
+            return redirect('mypage')->with('flash_message', 'レビューは投稿済みです');
+        }
 
         return view('reviews.post-review-form', ['user' => $user, 'idea' => $idea]);
     }
