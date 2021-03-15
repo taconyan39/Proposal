@@ -499,6 +499,10 @@ select {
   color: rgba(79, 195, 247, 0.7);
 }
 
+.c-link__container--previous {
+  margin-bottom: 15px;
+}
+
 .c-container--half {
   width: 50%;
 }
