@@ -14,12 +14,12 @@
 export default {
     props:{
         id: {
-          type: Number,
+            type: Number,
         },
     },
     data() {
         return {
-          item: [],
+            item: [],
         }
     },
     methods: {
@@ -36,9 +36,9 @@ export default {
     mounted(){
         const url = '/ajax/interest/' + this.id
             axios.get(url)
-              .then((response) => {
-                this.item= response.data;
-              })
+                .then((response) => {
+                    this.item= response.data;
+                })
     }
 }
 </script>

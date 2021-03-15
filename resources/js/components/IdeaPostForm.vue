@@ -115,14 +115,14 @@ Vue.use(VModal, {dialog: true});
 export default {
     props:['categories', 'url'],
     data: function(){
-      return {
-          category_id: "",
-          price: "",
-          title: "",
-          summary: "",
-          content: "",
-          errors:{},
-          postIdea: false,
+        return {
+            category_id: "",
+            price: "",
+            title: "",
+            summary: "",
+            content: "",
+            errors:{},
+            postIdea: false,
         }
     },
     methods:{

@@ -10,16 +10,16 @@
 
 <script>
 export default {
-  data() { 
-     return{
-      menu: false
-  }
+    data() { 
+        return{
+        menu: false
+    }
  },
-  methods :{
-      toggleMenu (){
+    methods :{
+        toggleMenu (){
         this.menu = !this.menu
         this.$emit("menu-click", this.menu);
-      },
+        },
     },
 }
 </script>

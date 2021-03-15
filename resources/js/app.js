@@ -33,9 +33,6 @@ Vue.component('on-remove-btn', require('./components/OnRemoveBtn.vue').default);
 Vue.component('profile-menu', require('./components/ProfileMenu.vue').default);
 Vue.component('textarea-label', require('./components/TextareaLabel.vue').default);
 
-Vue.component('confirm-modal', require('./components/ConfirmModal.vue').default);
-
-
 
 
 /**
