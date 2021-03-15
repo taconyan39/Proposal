@@ -62,6 +62,11 @@
       color: $color_action3;
     }
   }
+  &__container{
+    &--previous{
+      margin-bottom: $spascing_lg;
+    }
+  }
 }
 
 // 

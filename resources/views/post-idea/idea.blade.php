@@ -19,7 +19,7 @@
         <section class="p-ideaReviews">
 
             <p class="p-ideaDetail__reviewTitle">みんなの口コミ</p>
-        <!-- 口コミがない場合 -->
+            <!-- 口コミがない場合 -->
             @if($idea->reviews->isEmpty())
             <div class="c-list p-ideaReviews__list">
 
@@ -31,9 +31,10 @@
             @endif
         </section>
         
-        <div class="c-link__container">
+        <div class="c-link__container--previous">
             <a href="{{url()->previous()}}" class="c-link__underline">&lt;&lt; 前のページに戻る</a>
         </div>
+
     </main>
 </div>
 @endsection
