@@ -1,6 +1,7 @@
 .u-site__width{
   width: $site-width;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   @include mq(lg){
     width: 100%;
   }

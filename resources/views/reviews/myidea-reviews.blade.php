@@ -3,7 +3,7 @@
 @section('title', '口コミ一覧')
 @section('content')
 
-<div class="l-wrapper__2colum">
+<div class="l-wrapper__2colum u-site__width">
 
   @include('components.sidebar-profile')
   

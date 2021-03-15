@@ -124,7 +124,7 @@ class IdeasListController extends Controller
         $user_id = $user->id;
 
         // 気になるリストを登録順に代入
-        $ideas = Idea::whereHas('latestInterests', function($q) use ($user_id){
+        $ideas = Idea::whereHas('interests', function($q) use ($user_id){
             $q->where('user_id', $user_id);
         })->paginate(10);
 
@@ -171,14 +171,22 @@ class IdeasListController extends Controller
 
     public function userIdeas($id){
 
-        if(Auth::check()){
-            $owner = Auth::user();
-            if($owner->id === $id){
-                return redirect('myideas-list');
-            }
+        if(!ctype_digit($id)){
+            return redirect('mypage')->with('flash_message', __('Invalid operation was performed.'));
         }
 
         $user = User::find($id);
+
+        if($user === null){
+           abort(404); 
+        }
+
+        if(Auth::check()){
+            $owner = Auth::user();
+            if($owner->id === (int)$id){
+                return redirect('myideas-list');
+            }
+        }
 
         $categories = Category::all();
         $ideas = Idea::where('user_id', $id)->paginate(10);

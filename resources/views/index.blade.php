@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="l-wrapper__2colum">
+<div class="l-wrapper__2colum u-site__width">
 
   <div class="p-index__mainImg">
     <div class="c-img--outer"><img class="c-img" src="{{ asset('images/default/introduction.jpeg') }}"

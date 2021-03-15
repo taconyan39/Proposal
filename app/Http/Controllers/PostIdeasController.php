@@ -22,14 +22,8 @@ class PostIdeasController extends Controller
      // 投稿したアイデア一覧
     public function index()
     {
-        $user = Auth::user();
-        $categories = Category::all();
-        
 
-        $postIdeas = $user->ideas()->where('user_id',$user->id)->orderBy('created_at', 'desc')->paginate(10);
-
-
-        return view('post-idea.index', ['user' => $user, 'categories' => $categories,'postIdeas' => $postIdeas]);
+        return redirect('all-ideas-list');
     }
 
     /**

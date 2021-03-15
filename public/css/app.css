@@ -2782,7 +2782,8 @@ select {
 
 .u-site__width {
   width: 980px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media screen and (max-width: 992px) {
