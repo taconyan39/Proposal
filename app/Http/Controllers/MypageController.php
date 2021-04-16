@@ -36,7 +36,7 @@ class MypageController extends Controller
 
         // sessionにユーザー情報を入れる
         Session::put([
-            'name' => $user->name, 'icon_img' => $user->icon_img,
+            'name' => $user->name, 'icon_img' => 'storage/images/icons/'. $user->icon_img,
             'introduction' => $user->introduction
             ]);
 

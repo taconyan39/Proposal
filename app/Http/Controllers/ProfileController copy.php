@@ -40,12 +40,11 @@ class ProfileController extends Controller
             // 画像をリサイズ
             $resize_img = \Image::make($profileImage)->resize(300, 300)->encode($extension);
 
-            $save_path = 'public/images/icons/'.$file_name;
             // s3のディレクトリに追加
-            Storage::put($save_path, (string)$resize_img);
+            Storage::disk('s3')->put('/images/icons/' . $file_name,(string)$resize_img, 'public');
 
             // DBにパスを登録
-            $form['icon_img'] = $file_name;
+            $form['icon_img'] = Storage::disk('s3')->url('images/icons/'. $file_name);
         }
 
         unset($form['_token']);

@@ -90,7 +90,7 @@
                     <div class="c-container--half">
 
                         <icon-edit
-                            icon="{{ $user->icon_img}}"
+                            icon="{{ asset('storage/images/icons/' . $user->icon_img)}}"
                         ></icon-edit>
                         
                         @error('icon_img')
@@ -104,7 +104,7 @@
                     <div class="p-profileEdit__btn--container c-container--half">
 
                         <button type="submit" class="
-                        c-btn c-btn--action2 p-profileEdit__btn">
+                       c-btn c-btn--action2 p-profileEdit__btn">
                             {{ __('Edit') }}
                         </button>
                     </div>
