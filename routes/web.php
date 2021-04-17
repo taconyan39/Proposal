@@ -26,6 +26,8 @@ Route::group(['middleware' => ['auth']], function () {
   Route::get('post-review/{id}', 'ReviewsController@postForm');
 });
 
+//　テスト
+Route::get('/test', 'TestController@get');
 // トップページ
 
 Route::get('/', 'TopController@about');
