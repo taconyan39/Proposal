@@ -38,8 +38,8 @@
               
             <div class="p-ideaList__userCard c-card">
               <div class="c-img--outer c-img--round c-card--top p-ideaList__userImg--outer">
-                <img class="c-img p-ideaList__userImg" src="{{ $idea->user->icon_img }}"
-                srcset="{{ asset($idea->user->icon_img . ' 2x')}}"
+                <img class="c-img p-ideaList__userImg" src="{{ 'storage/images/icons/' . $idea->user->icon_img }}"
+                srcset="{{ asset( 'storage/images/icons/' . $idea->user->icon_img . ' 2x')}}"
                 alt="">
               </div>
               <div class="c-card--bottom p-ideaList__userCard--bottom">
@@ -91,8 +91,8 @@
               
             <div class="p-ideaList__userCard c-card">
               <div class="c-img--outer c-img--round c-card--top p-ideaList__userImg--outer">
-                <img class="c-img p-ideaList__userImg" src="{{ $idea->user->icon_img }}" 
-                srcset="{{ asset($idea->user->icon_img . ' 2x')}}"
+                <img class="c-img p-ideaList__userImg" src="{{ 'storage/images/icons/' .$idea->user->icon_img }}" 
+                srcset="{{ asset('storage/images/icons/' . $idea->user->icon_img . ' 2x')}}"
                 alt="">
               </div>
               <div class="c-card--bottom p-ideaList__userCard--bottom">

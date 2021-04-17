@@ -43,8 +43,8 @@
             
           <div class="p-ideaRanking__userCard c-card">
             <div class="c-img--outer c-img--round c-card--top p-ideaRanking__userImg--outer">
-              <img class="c-img p-ideaRanking__userImg" src="{{ $idea->user->icon_img }}"
-              srcset="{{ asset($idea->user->icon_img . ' 2x')}}"
+              <img class="c-img p-ideaRanking__userImg" src="{{ asset('storage/images/icons/' .  $idea->user->icon_img) }}"
+              srcset="{{ asset( 'storage/images/icons/' . $idea->user->icon_img . ' 2x')}}"
               alt="">
             </div>
             <div class="c-card--bottom p-ideaRanking__userCard--bottom">
@@ -100,8 +100,8 @@
               
             <div class="p-ideaRanking__userCard c-card">
               <div class="c-img--outer c-img--round c-card--top p-ideaRanking__userImg--outer">
-                <img class="c-img p-ideaRanking__userImg" src="{{ $idea->user->icon_img }}" 
-                srcset="{{ asset($idea->user->icon_img . ' 2x')}}"
+                <img class="c-img p-ideaRanking__userImg" src="{{ asset( 'storage/images/icons/' .$idea->user->icon_img) }}" 
+                srcset="{{ asset( 'storage/images/icons/' . $idea->user->icon_img . ' 2x')}}"
                 alt="">
               </div>
               <div class="c-card--bottom p-ideaRanking__userCard--bottom">

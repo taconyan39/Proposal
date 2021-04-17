@@ -25,8 +25,8 @@
         <div class="p-ideaDetail__info c-row c-flex--between">
             <div class="c-flex--end p-ideaDetail__user">
                 <div class="c-img--outer c-img--round p-ideaDetail__userImg--outer">
-                    <img class="c-img p-ideaList__userImg" src="{{ $idea->user->icon_img }}"
-                    srcset="{{ $idea->user->icon_img . ' 2x'}}"
+                    <img class="c-img p-ideaList__userImg" src="{{ asset('storage/images/icons/' .  $idea->user->icon_img) }}"
+                    srcset="{{ asset('storage/images/icons/' . $idea->user->icon_img . ' 2x')}}"
                     alt="アイコン画像">
                         
                     </div>

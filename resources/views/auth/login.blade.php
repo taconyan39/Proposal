@@ -59,6 +59,9 @@
 
             </div>
         </form>
+        <p style="text-align: center;">【テストユーザー】</p>
+        <p style="text-align: center;">ログイン:example@sample.com</p>
+        <p style="text-align: center;">パスワード:guestuser</p>
     </div>
     
 </div>

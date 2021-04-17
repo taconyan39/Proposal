@@ -33,8 +33,8 @@
           <div class="p-simpleList__body--left">
 
             <div class="c-img--outer c-img--round c-card--top p-simpleList__userImg--outer">
-              <img class="c-img p-simpleList__userImg" src="{{ $item->user->icon_img }}"
-              srcset="{{ $item->user->icon_img. ' 2x'}}"
+              <img class="c-img p-simpleList__userImg" src="{{  asset( 'storage/images/icons/' . $item->user->icon_img) }}"
+              srcset="{{ asset( 'storage/images/icons/' , $item->user->icon_img. ' 2x')}}"
               alt="">
             </div>
 
