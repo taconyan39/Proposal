@@ -12,7 +12,6 @@
                 </div>
             
                   <img src="{{ asset('images/default/categories/' . $pickupCategory->image) }}" 
-                  srcset="{{ asset('images/retina_2x/categories/' . $pickupCategory->image . ' 2x') }}"
                   alt="{{ $pickupCategory->name }}.'の写真'" class="c-img p-pickupCategory__img">
               </div>
 

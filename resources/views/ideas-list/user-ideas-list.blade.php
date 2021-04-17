@@ -15,7 +15,6 @@
       <div class="c-card p-userIdeaList__card--sp">
           <div class="c-img--outer c-img--round c-card-top p-userIdeaList__img--outer">
               <img class="c-img p-userIdeaList__img" src="{{ asset('storage/images/icons/' . $user->icon_img)}}" 
-              srcset="{{ asset('storage/images/icons/' . $user->icon_img) . ' 2x'}}"
               alt="プロフィール画像">
           </div>
           <li class="c-list__title p-userIdeaList__item">

@@ -37,7 +37,6 @@
 
             <div class="c-img--outer c-img--round c-card--top p-simpleList__userImg--outer">
               <img class="c-img p-ideaList__userImg" src="{{  asset( 'storage/images/icons/' .$review->user->icon_img)}}"
-              srcset="{{ asset( 'storage/images/icons/' . $review->user->icon_img . ' 2x')}}"
               alt="">
             </div>
           </div>
