@@ -27,7 +27,7 @@
                 </div>
 
             @else
-                <idea-reviews :id="{{$idea->id}}"></idea-reviews>
+                <!-- <idea-reviews :id="{{$idea->id}}" img="{{ asset('storage/images/icons/')}}"></idea-reviews> -->
             @endif
         </section>
         

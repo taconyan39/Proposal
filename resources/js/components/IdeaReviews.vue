@@ -15,7 +15,7 @@
                         <div class="c-img--outer c-img--round 
                         p-ideaReviews__userImg--outer">
                             <img class="c-img p-ideaReviews__userImg"
-                            :src="item.user.icon_img"
+                            :src="img + item.user.icon_img"
                             alt="アイコンイメージ">
                         </div>
                         <div class="p-ideaReviews__top--name">
